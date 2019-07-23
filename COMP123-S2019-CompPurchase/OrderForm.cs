@@ -25,5 +25,34 @@ namespace COMP123_S2019_CompPurchase
         {
             Application.Exit();
         }
+        /// <summary>
+        /// This is the event handler for the FinishButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FinishButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        /// <summary>
+        ///  This is the event handler for the CancelButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.START_FORM].Show();
+            this.Hide();
+        }
+        /// <summary>
+        /// This is the event handler for the BackButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
+            this.Hide();
+        }
     }
 }

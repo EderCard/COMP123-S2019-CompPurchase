@@ -25,5 +25,34 @@ namespace COMP123_S2019_CompPurchase
         {
             Application.Exit();
         }
+        /// <summary>
+        /// This is the event handler for the ExitButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        /// <summary>
+        /// This is the event handler for the StartNewOrderButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StartNewOrderButton_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.SELECT_FORM].Show();
+            this.Hide();
+        }
+        /// <summary>
+        /// This is the event handler for the OpenSavedOrderButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenSavedOrderButton_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.ORDER_FORM].Show();
+            this.Hide();
+        }
     }
 }
