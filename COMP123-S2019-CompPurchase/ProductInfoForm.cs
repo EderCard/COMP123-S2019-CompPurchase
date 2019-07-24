@@ -55,5 +55,15 @@ namespace COMP123_S2019_CompPurchase
             Program.Forms[FormName.START_FORM].Show();
             this.Hide();
         }
+        /// <summary>
+        /// This is the event handler for the OpenMenu option SelectOrderOpenFileDialog event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+        }
     }
 }

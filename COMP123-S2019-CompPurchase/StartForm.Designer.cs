@@ -31,57 +31,92 @@
             this.StartNewOrderButton = new System.Windows.Forms.Button();
             this.OpenSavedOrderButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.OrderComputerTodayLabel = new System.Windows.Forms.Label();
+            this.StartPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.StartPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // StartNewOrderButton
             // 
-            this.StartNewOrderButton.Location = new System.Drawing.Point(12, 267);
+            this.StartNewOrderButton.Location = new System.Drawing.Point(30, 298);
+            this.StartNewOrderButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StartNewOrderButton.Name = "StartNewOrderButton";
-            this.StartNewOrderButton.Size = new System.Drawing.Size(280, 43);
+            this.StartNewOrderButton.Size = new System.Drawing.Size(251, 35);
             this.StartNewOrderButton.TabIndex = 0;
-            this.StartNewOrderButton.Text = "Start New Order";
+            this.StartNewOrderButton.Text = "Start a New Order";
             this.StartNewOrderButton.UseVisualStyleBackColor = true;
             this.StartNewOrderButton.Click += new System.EventHandler(this.StartNewOrderButton_Click);
             // 
             // OpenSavedOrderButton
             // 
-            this.OpenSavedOrderButton.Location = new System.Drawing.Point(12, 327);
+            this.OpenSavedOrderButton.Location = new System.Drawing.Point(30, 347);
+            this.OpenSavedOrderButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OpenSavedOrderButton.Name = "OpenSavedOrderButton";
-            this.OpenSavedOrderButton.Size = new System.Drawing.Size(280, 43);
+            this.OpenSavedOrderButton.Size = new System.Drawing.Size(251, 35);
             this.OpenSavedOrderButton.TabIndex = 0;
-            this.OpenSavedOrderButton.Text = "Open Saved Order";
+            this.OpenSavedOrderButton.Text = "Open a Saved Order";
             this.OpenSavedOrderButton.UseVisualStyleBackColor = true;
             this.OpenSavedOrderButton.Click += new System.EventHandler(this.OpenSavedOrderButton_Click);
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(12, 386);
+            this.ExitButton.Location = new System.Drawing.Point(30, 397);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(280, 43);
+            this.ExitButton.Size = new System.Drawing.Size(251, 35);
             this.ExitButton.TabIndex = 0;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // OrderComputerTodayLabel
+            // 
+            this.OrderComputerTodayLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OrderComputerTodayLabel.AutoSize = true;
+            this.OrderComputerTodayLabel.Location = new System.Drawing.Point(26, 9);
+            this.OrderComputerTodayLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OrderComputerTodayLabel.Name = "OrderComputerTodayLabel";
+            this.OrderComputerTodayLabel.Size = new System.Drawing.Size(255, 24);
+            this.OrderComputerTodayLabel.TabIndex = 2;
+            this.OrderComputerTodayLabel.Text = "Order Your Computer Today!";
+            // 
+            // StartPictureBox
+            // 
+            this.StartPictureBox.Image = global::COMP123_S2019_CompPurchase.Properties.Resources.StartImage;
+            this.StartPictureBox.Location = new System.Drawing.Point(30, 57);
+            this.StartPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartPictureBox.Name = "StartPictureBox";
+            this.StartPictureBox.Size = new System.Drawing.Size(251, 216);
+            this.StartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.StartPictureBox.TabIndex = 1;
+            this.StartPictureBox.TabStop = false;
+            // 
             // StartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(304, 441);
+            this.ControlBox = false;
+            this.Controls.Add(this.OrderComputerTodayLabel);
+            this.Controls.Add(this.StartPictureBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.OpenSavedOrderButton);
             this.Controls.Add(this.StartNewOrderButton);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Start Form";
+            this.Text = "Welcome to Dollar Computer!";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.StartPictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -90,5 +125,7 @@
         private System.Windows.Forms.Button StartNewOrderButton;
         private System.Windows.Forms.Button OpenSavedOrderButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.PictureBox StartPictureBox;
+        private System.Windows.Forms.Label OrderComputerTodayLabel;
     }
 }

@@ -42,8 +42,17 @@ namespace COMP123_S2019_CompPurchase
         /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.START_FORM].Show();
-            this.Hide();
+            Application.Exit();
+        }
+
+        private void HardwareSelectedLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void YourSelectionLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

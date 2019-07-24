@@ -51,7 +51,7 @@ namespace COMP123_S2019_CompPurchase
         /// <param name="e"></param>
         private void OpenSavedOrderButton_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.ORDER_FORM].Show();
+            Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
             this.Hide();
         }
     }
