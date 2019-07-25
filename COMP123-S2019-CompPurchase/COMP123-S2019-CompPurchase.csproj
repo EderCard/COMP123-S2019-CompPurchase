@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Computer.cs" />
+    <Compile Include="DollarComputersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DollarComputersDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormName.cs" />
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
@@ -107,6 +113,17 @@
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DollarComputersDataSet.xsc">
+      <DependentUpon>DollarComputersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DollarComputersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DollarComputersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DollarComputersDataSet.xss">
+      <DependentUpon>DollarComputersDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

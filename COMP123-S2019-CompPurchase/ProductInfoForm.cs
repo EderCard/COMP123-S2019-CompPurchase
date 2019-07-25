@@ -65,5 +65,29 @@ namespace COMP123_S2019_CompPurchase
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
         }
+        /// <summary>
+        /// This is the evet handler for the ProductInfoForm Activated event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProductInfoForm_Activated(object sender, EventArgs e)
+        {
+            ProductIDDataLabel.Text = Program.computer.ProductId.ToString();
+            ConditionDataLabel.Text = Program.computer.Condition;
+            CostDataLabel.Text = Program.computer.Cost.ToString();
+            PlataformDataLabel.Text = Program.computer.Plataform;
+            OSDataLabel.Text = Program.computer.Os;
+            ManufacturerDataLabel.Text = Program.computer.Manufacturer;
+            ModelDataLabel.Text = Program.computer.Model;
+            MemoryDataLabel.Text = Program.computer.Memory;
+            LCDSizeDataLabel.Text = Program.computer.LcdSize;
+            HDDDataLabel.Text = Program.computer.Hdd;
+            CPUBrandDataLabel.Text = Program.computer.CpuBrand;
+            CPUNumberDataLabel.Text = Program.computer.CpuNumber;
+            GPUTypeDataLabel.Text = Program.computer.GpuType;
+            CPUTypeDataLabel.Text = Program.computer.CpuType;
+            CPUSpeedDataLabel.Text = Program.computer.CpuSpeed;
+            WebCamDataLabel.Text = Program.computer.WebCam;
+        }
     }
 }
