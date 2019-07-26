@@ -12,6 +12,8 @@ namespace COMP123_S2019_CompPurchase
 {
     public partial class SelectForm : Form
     {
+        // Properties
+       // public products SelectedProduct { get; set; }
         public SelectForm()
         {
             InitializeComponent();
@@ -44,22 +46,16 @@ namespace COMP123_S2019_CompPurchase
         {
             Application.Exit();
         }
-
-        private void HardwareSelectedLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void YourSelectionLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// This is the event handler for the  SelectForm load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dollarComputersDataSet.products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
-
+            NextButton.Enabled = false;
         }
         /// <summary>
         /// This is the event handler for the HardwareListDataGridView SelectionChanged event
@@ -68,6 +64,9 @@ namespace COMP123_S2019_CompPurchase
         /// <param name="e"></param>
         private void HardwareListDataGridView_SelectionChanged(object sender, EventArgs e)
         {
+            // Store temporal the product selected on the datagrid
+            //products tempProduct = HardwareListDataGridView.CurrentRow.DataBoundItem as products;
+
             //local variables that are used as aliases
             var currentCell = HardwareListDataGridView.CurrentCell;
             var rowIndex = HardwareListDataGridView.CurrentCell.RowIndex;
@@ -84,24 +83,54 @@ namespace COMP123_S2019_CompPurchase
                 outputString += cells[index].Value + " ";
             }
 
-            HardwareSelectedLabel.Text = outputString;
+            HardwareSelectedLabel.Text = 
+                HardwareListDataGridView.SelectedRows[0].Cells[2].Value.ToString() + " " + 
+                HardwareListDataGridView.SelectedRows[0].Cells[3].Value.ToString() + " Priced at: " +
+                double.Parse(HardwareListDataGridView.SelectedRows[0].Cells[1].Value.ToString());
 
-            Program.computer.ProductId = int.Parse(cells[(int)computerField.PRODUCT_ID].Value.ToString());
-            Program.computer.Condition = cells[(int)computerField.CONDITION].Value.ToString();
-            //Program.computer.Cost = float.Parse(cells[(int)computerField.COST].Value.ToString());
-            Program.computer.Plataform = cells[(int)computerField.PLATFORM].Value.ToString();
-            Program.computer.Os = cells[(int)computerField.OS].Value.ToString();
-            Program.computer.Manufacturer = cells[(int)computerField.MANUFACTURER].Value.ToString();
-            Program.computer.Model = cells[(int)computerField.MODEL].Value.ToString();
-            Program.computer.Memory = cells[(int)computerField.MEMORY].Value.ToString();
-            Program.computer.LcdSize = cells[(int)computerField.LCD_SIZE].Value.ToString();
-            Program.computer.Hdd = cells[(int)computerField.HDD].Value.ToString();
-            Program.computer.CpuBrand = cells[(int)computerField.CPU_BRAND].Value.ToString();
-            Program.computer.CpuNumber = cells[(int)computerField.CPU_NUMBER].Value.ToString();
-            Program.computer.GpuType = cells[(int)computerField.GPU_TYPE].Value.ToString();
-            Program.computer.CpuType = cells[(int)computerField.CPU_TYPE].Value.ToString();
-            Program.computer.CpuSpeed = cells[(int)computerField.CPU_SPEED].Value.ToString();
-            Program.computer.WebCam = cells[(int)computerField.WEBCAM].Value.ToString();
+            PopulateProductInfoForm(cells);
+
+            NextButton.Enabled = true;
+        }
+        /// <summary>
+        /// This method populate a computer object with info from a line selected in DataGridView
+        /// </summary>
+        /// <param name="cells"></param>
+        private static void PopulateProductInfoForm(DataGridViewCellCollection cells)
+        {
+            Program.computer.ProductId = int.Parse(cells[0].Value.ToString());
+            Program.computer.Cost = double.Parse(cells[1].Value.ToString());
+            Program.computer.Manufacturer = cells[2].Value.ToString();
+            Program.computer.Condition = cells[14].Value.ToString();
+            Program.computer.Plataform = cells[16].Value.ToString();
+            Program.computer.Os = cells[15].Value.ToString();
+            Program.computer.Model = cells[3].Value.ToString();
+            Program.computer.Memory = cells[5].Value.ToString();
+            Program.computer.LcdSize = cells[7].Value.ToString();
+            Program.computer.Hdd = cells[17].Value.ToString();
+            Program.computer.CpuBrand = cells[10].Value.ToString();
+            Program.computer.CpuNumber = cells[13].Value.ToString();
+            Program.computer.GpuType = cells[19].Value.ToString();
+            Program.computer.CpuType = cells[11].Value.ToString();
+            Program.computer.CpuSpeed = cells[12].Value.ToString();
+            Program.computer.WebCam = cells[30].Value.ToString();
+
+            //Program.computer.ProductId = int.Parse(cells[(int)ComputerField.PRODUCT_ID].Value.ToString());
+            //Program.computer.Cost = double.Parse(cells[(int)computerField.COST].Value.ToString());
+            //Program.computer.Manufacturer = cells[(int)ComputerField.MANUFACTURER].Value.ToString();
+            //Program.computer.Condition = cells[(int)ComputerField.CONDITION].Value.ToString();
+            //Program.computer.Plataform = cells[(int)ComputerField.PLATFORM].Value.ToString();
+            //Program.computer.Os = cells[(int)ComputerField.OS].Value.ToString();
+            //Program.computer.Model = cells[(int)ComputerField.MODEL].Value.ToString();
+            //Program.computer.Memory = cells[(int)ComputerField.MEMORY].Value.ToString();
+            //Program.computer.LcdSize = cells[(int)ComputerField.LCD_SIZE].Value.ToString();
+            //Program.computer.Hdd = cells[(int)ComputerField.HDD].Value.ToString();
+            //Program.computer.CpuBrand = cells[(int)ComputerField.CPU_BRAND].Value.ToString();
+            //Program.computer.CpuNumber = cells[(int)ComputerField.CPU_NUMBER].Value.ToString();
+            //Program.computer.GpuType = cells[(int)ComputerField.GPU_TYPE].Value.ToString();
+            //Program.computer.CpuType = cells[(int)ComputerField.CPU_TYPE].Value.ToString();
+            //Program.computer.CpuSpeed = cells[(int)ComputerField.CPU_SPEED].Value.ToString();
+            //Program.computer.WebCam = cells[(int)ComputerField.WEBCAM].Value.ToString();
         }
     }
 }

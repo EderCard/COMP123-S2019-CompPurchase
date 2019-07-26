@@ -38,7 +38,6 @@
             // 
             // SplashTimer
             // 
-            this.SplashTimer.Interval = 2000;
             this.SplashTimer.Tick += new System.EventHandler(this.SplashTimer_Tick);
             // 
             // pictureBox1

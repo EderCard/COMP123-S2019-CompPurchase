@@ -9,7 +9,7 @@ namespace COMP123_S2019_CompPurchase
     /// <summary>
     /// ENUM to store computer fields on ProductInfoForm
     /// </summary>
-    enum computerField
+    enum ComputerField
     {
         PRODUCT_ID,
         CONDITION,

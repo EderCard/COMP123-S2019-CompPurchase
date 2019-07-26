@@ -33,11 +33,6 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.DollarComputerHardwareListLabel = new System.Windows.Forms.Label();
             this.HardwareListDataGridView = new System.Windows.Forms.DataGridView();
-            this.YourSelectionLabel = new System.Windows.Forms.Label();
-            this.HardwareSelectedLabel = new System.Windows.Forms.Label();
-            this.dollarComputersDataSet = new COMP123_S2019_CompPurchase.DollarComputersDataSet();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new COMP123_S2019_CompPurchase.DollarComputersDataSetTableAdapters.productsTableAdapter();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +64,14 @@
             this.mousttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.powerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.webcamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dollarComputersDataSet = new COMP123_S2019_CompPurchase.DollarComputersDataSet();
+            this.YourSelectionLabel = new System.Windows.Forms.Label();
+            this.HardwareSelectedLabel = new System.Windows.Forms.Label();
+            this.productsTableAdapter = new COMP123_S2019_CompPurchase.DollarComputersDataSetTableAdapters.productsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.HardwareListDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // NextButton
@@ -152,42 +152,6 @@
             this.HardwareListDataGridView.Size = new System.Drawing.Size(760, 453);
             this.HardwareListDataGridView.TabIndex = 2;
             this.HardwareListDataGridView.SelectionChanged += new System.EventHandler(this.HardwareListDataGridView_SelectionChanged);
-            // 
-            // YourSelectionLabel
-            // 
-            this.YourSelectionLabel.Location = new System.Drawing.Point(11, 520);
-            this.YourSelectionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.YourSelectionLabel.Name = "YourSelectionLabel";
-            this.YourSelectionLabel.Size = new System.Drawing.Size(138, 24);
-            this.YourSelectionLabel.TabIndex = 3;
-            this.YourSelectionLabel.Text = "Your Selection:";
-            this.YourSelectionLabel.Click += new System.EventHandler(this.YourSelectionLabel_Click);
-            // 
-            // HardwareSelectedLabel
-            // 
-            this.HardwareSelectedLabel.BackColor = System.Drawing.Color.White;
-            this.HardwareSelectedLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HardwareSelectedLabel.Location = new System.Drawing.Point(153, 515);
-            this.HardwareSelectedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.HardwareSelectedLabel.Name = "HardwareSelectedLabel";
-            this.HardwareSelectedLabel.Size = new System.Drawing.Size(419, 35);
-            this.HardwareSelectedLabel.TabIndex = 4;
-            this.HardwareSelectedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HardwareSelectedLabel.Click += new System.EventHandler(this.HardwareSelectedLabel_Click);
-            // 
-            // dollarComputersDataSet
-            // 
-            this.dollarComputersDataSet.DataSetName = "DollarComputersDataSet";
-            this.dollarComputersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "products";
-            this.productsBindingSource.DataSource = this.dollarComputersDataSet;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -406,6 +370,40 @@
             this.webcamDataGridViewTextBoxColumn.Name = "webcamDataGridViewTextBoxColumn";
             this.webcamDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "products";
+            this.productsBindingSource.DataSource = this.dollarComputersDataSet;
+            // 
+            // dollarComputersDataSet
+            // 
+            this.dollarComputersDataSet.DataSetName = "DollarComputersDataSet";
+            this.dollarComputersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // YourSelectionLabel
+            // 
+            this.YourSelectionLabel.Location = new System.Drawing.Point(11, 520);
+            this.YourSelectionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.YourSelectionLabel.Name = "YourSelectionLabel";
+            this.YourSelectionLabel.Size = new System.Drawing.Size(138, 24);
+            this.YourSelectionLabel.TabIndex = 3;
+            this.YourSelectionLabel.Text = "Your Selection:";
+            // 
+            // HardwareSelectedLabel
+            // 
+            this.HardwareSelectedLabel.BackColor = System.Drawing.Color.White;
+            this.HardwareSelectedLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardwareSelectedLabel.Location = new System.Drawing.Point(153, 515);
+            this.HardwareSelectedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.HardwareSelectedLabel.Name = "HardwareSelectedLabel";
+            this.HardwareSelectedLabel.Size = new System.Drawing.Size(419, 35);
+            this.HardwareSelectedLabel.TabIndex = 4;
+            this.HardwareSelectedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -427,8 +425,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectForm_FormClosing);
             this.Load += new System.EventHandler(this.SelectForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HardwareListDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

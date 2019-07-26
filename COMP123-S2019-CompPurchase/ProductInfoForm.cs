@@ -60,10 +60,20 @@ namespace COMP123_S2019_CompPurchase
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        public void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
+        }
+        /// <summary>
+        /// This is the event handler for the SavenMenu option SelectOrderOpenFileDialog event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.ShowDialog();
         }
         /// <summary>
         /// This is the evet handler for the ProductInfoForm Activated event
