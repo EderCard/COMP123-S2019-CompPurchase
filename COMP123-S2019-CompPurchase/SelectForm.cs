@@ -84,9 +84,9 @@ namespace COMP123_S2019_CompPurchase
             }
 
             HardwareSelectedLabel.Text = 
-                HardwareListDataGridView.SelectedRows[0].Cells[2].Value.ToString() + " " + 
-                HardwareListDataGridView.SelectedRows[0].Cells[3].Value.ToString() + " Priced at: " +
-                double.Parse(HardwareListDataGridView.SelectedRows[0].Cells[1].Value.ToString());
+                HardwareListDataGridView.SelectedRows[0].Cells[(int)ComputerField.MANUFACTURER].Value.ToString() + " " + 
+                HardwareListDataGridView.SelectedRows[0].Cells[(int)ComputerField.MODEL].Value.ToString() + " Priced at: " +
+                double.Parse(HardwareListDataGridView.SelectedRows[0].Cells[(int)ComputerField.COST].Value.ToString());
 
             PopulateProductInfoForm(cells);
 
@@ -98,39 +98,22 @@ namespace COMP123_S2019_CompPurchase
         /// <param name="cells"></param>
         private static void PopulateProductInfoForm(DataGridViewCellCollection cells)
         {
-            Program.computer.ProductId = int.Parse(cells[0].Value.ToString());
-            Program.computer.Cost = double.Parse(cells[1].Value.ToString());
-            Program.computer.Manufacturer = cells[2].Value.ToString();
-            Program.computer.Condition = cells[14].Value.ToString();
-            Program.computer.Plataform = cells[16].Value.ToString();
-            Program.computer.Os = cells[15].Value.ToString();
-            Program.computer.Model = cells[3].Value.ToString();
-            Program.computer.Memory = cells[5].Value.ToString();
-            Program.computer.LcdSize = cells[7].Value.ToString();
-            Program.computer.Hdd = cells[17].Value.ToString();
-            Program.computer.CpuBrand = cells[10].Value.ToString();
-            Program.computer.CpuNumber = cells[13].Value.ToString();
-            Program.computer.GpuType = cells[19].Value.ToString();
-            Program.computer.CpuType = cells[11].Value.ToString();
-            Program.computer.CpuSpeed = cells[12].Value.ToString();
-            Program.computer.WebCam = cells[30].Value.ToString();
-
-            //Program.computer.ProductId = int.Parse(cells[(int)ComputerField.PRODUCT_ID].Value.ToString());
-            //Program.computer.Cost = double.Parse(cells[(int)computerField.COST].Value.ToString());
-            //Program.computer.Manufacturer = cells[(int)ComputerField.MANUFACTURER].Value.ToString();
-            //Program.computer.Condition = cells[(int)ComputerField.CONDITION].Value.ToString();
-            //Program.computer.Plataform = cells[(int)ComputerField.PLATFORM].Value.ToString();
-            //Program.computer.Os = cells[(int)ComputerField.OS].Value.ToString();
-            //Program.computer.Model = cells[(int)ComputerField.MODEL].Value.ToString();
-            //Program.computer.Memory = cells[(int)ComputerField.MEMORY].Value.ToString();
-            //Program.computer.LcdSize = cells[(int)ComputerField.LCD_SIZE].Value.ToString();
-            //Program.computer.Hdd = cells[(int)ComputerField.HDD].Value.ToString();
-            //Program.computer.CpuBrand = cells[(int)ComputerField.CPU_BRAND].Value.ToString();
-            //Program.computer.CpuNumber = cells[(int)ComputerField.CPU_NUMBER].Value.ToString();
-            //Program.computer.GpuType = cells[(int)ComputerField.GPU_TYPE].Value.ToString();
-            //Program.computer.CpuType = cells[(int)ComputerField.CPU_TYPE].Value.ToString();
-            //Program.computer.CpuSpeed = cells[(int)ComputerField.CPU_SPEED].Value.ToString();
-            //Program.computer.WebCam = cells[(int)ComputerField.WEBCAM].Value.ToString();
+            Program.computer.ProductId = int.Parse(cells[(int)ComputerField.PRODUCT_ID].Value.ToString());
+            Program.computer.Cost = double.Parse(cells[(int)ComputerField.COST].Value.ToString());
+            Program.computer.Manufacturer = cells[(int)ComputerField.MANUFACTURER].Value.ToString();
+            Program.computer.Condition = cells[(int)ComputerField.CONDITION].Value.ToString();
+            Program.computer.Plataform = cells[(int)ComputerField.PLATFORM].Value.ToString();
+            Program.computer.Os = cells[(int)ComputerField.OS].Value.ToString();
+            Program.computer.Model = cells[(int)ComputerField.MODEL].Value.ToString();
+            Program.computer.Memory = cells[(int)ComputerField.MEMORY].Value.ToString();
+            Program.computer.LcdSize = cells[(int)ComputerField.LCD_SIZE].Value.ToString();
+            Program.computer.Hdd = cells[(int)ComputerField.HDD].Value.ToString();
+            Program.computer.CpuBrand = cells[(int)ComputerField.CPU_BRAND].Value.ToString();
+            Program.computer.CpuNumber = cells[(int)ComputerField.CPU_NUMBER].Value.ToString();
+            Program.computer.GpuType = cells[(int)ComputerField.GPU_TYPE].Value.ToString();
+            Program.computer.CpuType = cells[(int)ComputerField.CPU_TYPE].Value.ToString();
+            Program.computer.CpuSpeed = cells[(int)ComputerField.CPU_SPEED].Value.ToString();
+            Program.computer.WebCam = cells[(int)ComputerField.WEBCAM].Value.ToString();
         }
     }
 }

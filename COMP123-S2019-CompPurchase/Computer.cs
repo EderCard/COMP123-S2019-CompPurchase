@@ -9,25 +9,25 @@ namespace COMP123_S2019_CompPurchase
     /// <summary>
     /// ENUM to store computer fields on ProductInfoForm
     /// </summary>
+    [Flags]
     enum ComputerField
     {
-        PRODUCT_ID,
-        CONDITION,
-        COST,
-        PLATFORM,
-        OS,
-        MANUFACTURER,
-        MODEL,
-        MEMORY,
-        LCD_SIZE,
-        HDD,
-        CPU_BRAND,
-        CPU_NUMBER,
-        GPU_TYPE,
-        CPU_TYPE,
-        CPU_SPEED,
-        WEBCAM,
-        NUMBER_OF_ITEMS
+        PRODUCT_ID = 0,
+        CONDITION = 14,
+        COST = 1,
+        PLATFORM = 16,
+        OS = 15,
+        MANUFACTURER = 2,
+        MODEL = 3,
+        MEMORY = 5,
+        LCD_SIZE = 7,
+        HDD = 17,
+        CPU_BRAND = 10,
+        CPU_NUMBER = 13,
+        GPU_TYPE = 19,
+        CPU_TYPE = 11,
+        CPU_SPEED = 12,
+        WEBCAM = 30
     }
     /// <summary>
     /// This class handle a Computer object
