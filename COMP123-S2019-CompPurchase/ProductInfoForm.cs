@@ -12,6 +12,7 @@ namespace COMP123_S2019_CompPurchase
 {
     public partial class ProductInfoForm : Form
     {
+
         public ProductInfoForm()
         {
             InitializeComponent();

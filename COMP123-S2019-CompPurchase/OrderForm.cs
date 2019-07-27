@@ -33,20 +33,21 @@ namespace COMP123_S2019_CompPurchase
         /// <param name="e"></param>
         private void FinishButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Thanks for your purchase.\n\nYour Order will be processed in 7-10 business days.", 
+                "Order Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
         /// <summary>
-        ///  This is the event handler for the CancelButton click event
+        ///  This is the shared event handler for the CancelButton and ExitToolStripMenuItem click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.START_FORM].Show();
-            this.Hide();
+            Application.Exit();
         }
         /// <summary>
-        /// This is the event handler for the BackButton click event
+        /// This is the shared event handler for the BackButton and BackToolStripMenuItem click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -81,6 +82,24 @@ namespace COMP123_S2019_CompPurchase
             SalesTaxDataLabel.Text = (Program.computer.Cost * SALES_TAX).ToString("C");
             //Calculate Total Price
             TotalDataLabel.Text = (Program.computer.Cost * (1+ SALES_TAX)).ToString("C");
+        }
+        /// <summary>
+        /// This is the evnt handler for the PrintToolStripMenuItem click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PrintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Printing Order...", "Print", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        /// <summary>
+        /// This is the event handler for the AboutToolStripMenuItem click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.ABOUT_FORM].ShowDialog();
         }
     }
 }

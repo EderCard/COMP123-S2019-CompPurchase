@@ -28,6 +28,7 @@ namespace COMP123_S2019_CompPurchase
             Forms.Add(FormName.SELECT_FORM, new SelectForm());
             Forms.Add(FormName.PRODUCT_INFO_FORM, new ProductInfoForm());
             Forms.Add(FormName.ORDER_FORM, new OrderForm());
+            Forms.Add(FormName.ABOUT_FORM, new AboutForm());
 
             //creating a computer object
             computer = new Computer();

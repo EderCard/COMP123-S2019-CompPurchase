@@ -16,6 +16,7 @@ namespace COMP123_S2019_CompPurchase
         PRODUCT_INFO_FORM,
         SELECT_FORM,
         ORDER_FORM,
+        ABOUT_FORM,
         NUM_OF_FORMS
     }
 }
