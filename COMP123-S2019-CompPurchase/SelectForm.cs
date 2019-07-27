@@ -79,21 +79,7 @@ namespace COMP123_S2019_CompPurchase
                 outputString += cells[index].Value + " ";
             }
 
-            HardwareSelectedLabel.Text = 
-                HardwareListDataGridView.SelectedRows[0].Cells[(int)ComputerField.MANUFACTURER].Value.ToString() + " " + 
-                HardwareListDataGridView.SelectedRows[0].Cells[(int)ComputerField.MODEL].Value.ToString() + " Priced at: " +
-                double.Parse(HardwareListDataGridView.SelectedRows[0].Cells[(int)ComputerField.COST].Value.ToString());
-
-            PopulateProductInfoForm(cells);
-
-            NextButton.Enabled = true;
-        }
-        /// <summary>
-        /// This method populate a computer object with info from a line selected in DataGridView
-        /// </summary>
-        /// <param name="cells"></param>
-        private static void PopulateProductInfoForm(DataGridViewCellCollection cells)
-        {
+            //Populate a computer object with info from a line selected in DataGridView
             Program.computer.ProductId = int.Parse(cells[(int)ComputerField.PRODUCT_ID].Value.ToString());
             Program.computer.Cost = double.Parse(cells[(int)ComputerField.COST].Value.ToString());
             Program.computer.Manufacturer = cells[(int)ComputerField.MANUFACTURER].Value.ToString();
@@ -110,6 +96,13 @@ namespace COMP123_S2019_CompPurchase
             Program.computer.CpuType = cells[(int)ComputerField.CPU_TYPE].Value.ToString();
             Program.computer.CpuSpeed = cells[(int)ComputerField.CPU_SPEED].Value.ToString();
             Program.computer.WebCam = cells[(int)ComputerField.WEBCAM].Value.ToString();
+
+            //Populate Your Selection Label
+            HardwareSelectedLabel.Text = Program.computer.Manufacturer.ToString() + " " +
+                                         Program.computer.Model.ToString() + " " +
+                                         (Program.computer.Cost).ToString("C");
+
+            NextButton.Enabled = true;
         }
     }
 }

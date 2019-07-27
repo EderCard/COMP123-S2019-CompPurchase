@@ -144,6 +144,7 @@
     <None Include="Resources\StartImage.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Product.jpg" />
     <Content Include="StartImage.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

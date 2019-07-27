@@ -91,7 +91,7 @@ namespace COMP123_S2019_CompPurchase
         {
             ProductIDDataLabel.Text = Program.computer.ProductId.ToString();
             ConditionDataLabel.Text = Program.computer.Condition;
-            CostDataLabel.Text = Program.computer.Cost.ToString();
+            CostDataLabel.Text = Program.computer.Cost.ToString("C");
             PlataformDataLabel.Text = Program.computer.Plataform;
             OSDataLabel.Text = Program.computer.Os;
             ManufacturerDataLabel.Text = Program.computer.Manufacturer;

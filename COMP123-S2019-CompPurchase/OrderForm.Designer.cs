@@ -34,7 +34,6 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.OrderFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +41,6 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemComponentsGroupBox = new System.Windows.Forms.GroupBox();
             this.YourPriceGroupBox = new System.Windows.Forms.GroupBox();
-            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.ConditionDataLabel = new System.Windows.Forms.Label();
             this.ConditionLabel = new System.Windows.Forms.Label();
             this.PlataformDataLabel = new System.Windows.Forms.Label();
@@ -66,8 +64,6 @@
             this.CPUSpeedLabel = new System.Windows.Forms.Label();
             this.HDDDataLabel = new System.Windows.Forms.Label();
             this.HDDLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.WebCamDataLabel = new System.Windows.Forms.Label();
             this.WebCamLabel = new System.Windows.Forms.Label();
             this.OSDataLabel = new System.Windows.Forms.Label();
@@ -79,12 +75,16 @@
             this.SalesTaxLabel = new System.Windows.Forms.Label();
             this.TotalDataLabel = new System.Windows.Forms.Label();
             this.TotalLabel = new System.Windows.Forms.Label();
+            this.GPUTypeDataLabel = new System.Windows.Forms.Label();
+            this.GPUTypeLabel = new System.Windows.Forms.Label();
+            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OrderFormMenuStrip.SuspendLayout();
             this.systemComponentsGroupBox.SuspendLayout();
             this.YourPriceGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.ProductDetailsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -141,19 +141,10 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // helpToolStripMenuItem
@@ -167,14 +158,14 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.undoToolStripMenuItem.Text = "&Back";
             // 
             // editToolStripMenuItem
@@ -188,12 +179,12 @@
             // systemComponentsGroupBox
             // 
             this.systemComponentsGroupBox.Controls.Add(this.OSLabel);
+            this.systemComponentsGroupBox.Controls.Add(this.GPUTypeLabel);
             this.systemComponentsGroupBox.Controls.Add(this.ProductDetailsPanel);
             this.systemComponentsGroupBox.Controls.Add(this.LCDSizeLabel);
             this.systemComponentsGroupBox.Controls.Add(this.WebCamLabel);
             this.systemComponentsGroupBox.Controls.Add(this.MemoryLabel);
             this.systemComponentsGroupBox.Controls.Add(this.CPUTypeLabel);
-            this.systemComponentsGroupBox.Controls.Add(this.label2);
             this.systemComponentsGroupBox.Controls.Add(this.ConditionDataLabel);
             this.systemComponentsGroupBox.Controls.Add(this.CPUBrandLabel);
             this.systemComponentsGroupBox.Controls.Add(this.PlataformLabel);
@@ -211,7 +202,7 @@
             this.systemComponentsGroupBox.Size = new System.Drawing.Size(438, 513);
             this.systemComponentsGroupBox.TabIndex = 6;
             this.systemComponentsGroupBox.TabStop = false;
-            this.systemComponentsGroupBox.Text = "system Components";
+            this.systemComponentsGroupBox.Text = "System Components";
             // 
             // YourPriceGroupBox
             // 
@@ -227,14 +218,6 @@
             this.YourPriceGroupBox.TabIndex = 7;
             this.YourPriceGroupBox.TabStop = false;
             this.YourPriceGroupBox.Text = "Your Price";
-            // 
-            // ProductPictureBox
-            // 
-            this.ProductPictureBox.Location = new System.Drawing.Point(456, 49);
-            this.ProductPictureBox.Name = "ProductPictureBox";
-            this.ProductPictureBox.Size = new System.Drawing.Size(178, 149);
-            this.ProductPictureBox.TabIndex = 8;
-            this.ProductPictureBox.TabStop = false;
             // 
             // ConditionDataLabel
             // 
@@ -339,13 +322,13 @@
             // ProductDetailsPanel
             // 
             this.ProductDetailsPanel.BackColor = System.Drawing.Color.White;
+            this.ProductDetailsPanel.Controls.Add(this.GPUTypeDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.OSDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.LCDSizeDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.MemoryDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.WebCamDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.CPUBrandDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.CPUTypeDataLabel);
-            this.ProductDetailsPanel.Controls.Add(this.label1);
             this.ProductDetailsPanel.Controls.Add(this.CPUNumberDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.CPUSpeedDataLabel);
             this.ProductDetailsPanel.Controls.Add(this.HDDDataLabel);
@@ -522,30 +505,6 @@
             this.HDDLabel.Text = "HDD";
             this.HDDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 251);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 23);
-            this.label1.TabIndex = 27;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.Location = new System.Drawing.Point(9, 395);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 16);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "CPU Type";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // WebCamDataLabel
             // 
             this.WebCamDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -611,7 +570,7 @@
             this.PriceDataLabel.Name = "PriceDataLabel";
             this.PriceDataLabel.Size = new System.Drawing.Size(104, 23);
             this.PriceDataLabel.TabIndex = 9;
-            this.PriceDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PriceDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PriceLabel
             // 
@@ -636,7 +595,7 @@
             this.SalesTaxDataLabel.Name = "SalesTaxDataLabel";
             this.SalesTaxDataLabel.Size = new System.Drawing.Size(104, 23);
             this.SalesTaxDataLabel.TabIndex = 9;
-            this.SalesTaxDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SalesTaxDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // SalesTaxLabel
             // 
@@ -661,7 +620,7 @@
             this.TotalDataLabel.Name = "TotalDataLabel";
             this.TotalDataLabel.Size = new System.Drawing.Size(104, 23);
             this.TotalDataLabel.TabIndex = 9;
-            this.TotalDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TotalDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TotalLabel
             // 
@@ -671,8 +630,51 @@
             this.TotalLabel.Name = "TotalLabel";
             this.TotalLabel.Size = new System.Drawing.Size(104, 18);
             this.TotalLabel.TabIndex = 10;
-            this.TotalLabel.Text = "Price";
+            this.TotalLabel.Text = "Total";
             this.TotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // GPUTypeDataLabel
+            // 
+            this.GPUTypeDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GPUTypeDataLabel.BackColor = System.Drawing.Color.White;
+            this.GPUTypeDataLabel.Location = new System.Drawing.Point(0, 254);
+            this.GPUTypeDataLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.GPUTypeDataLabel.Name = "GPUTypeDataLabel";
+            this.GPUTypeDataLabel.Size = new System.Drawing.Size(316, 23);
+            this.GPUTypeDataLabel.TabIndex = 31;
+            this.GPUTypeDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // GPUTypeLabel
+            // 
+            this.GPUTypeLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.GPUTypeLabel.Location = new System.Drawing.Point(15, 398);
+            this.GPUTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.GPUTypeLabel.Name = "GPUTypeLabel";
+            this.GPUTypeLabel.Size = new System.Drawing.Size(95, 16);
+            this.GPUTypeLabel.TabIndex = 30;
+            this.GPUTypeLabel.Text = "GPU Type";
+            this.GPUTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ProductPictureBox
+            // 
+            this.ProductPictureBox.Image = global::COMP123_S2019_CompPurchase.Properties.Resources.Product;
+            this.ProductPictureBox.Location = new System.Drawing.Point(456, 49);
+            this.ProductPictureBox.Name = "ProductPictureBox";
+            this.ProductPictureBox.Size = new System.Drawing.Size(178, 149);
+            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductPictureBox.TabIndex = 8;
+            this.ProductPictureBox.TabStop = false;
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
+            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.printToolStripMenuItem.Text = "&Print";
             // 
             // OrderForm
             // 
@@ -695,14 +697,15 @@
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Complete Your Order";
+            this.Activated += new System.EventHandler(this.OrderForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderForm_FormClosing);
             this.OrderFormMenuStrip.ResumeLayout(false);
             this.OrderFormMenuStrip.PerformLayout();
             this.systemComponentsGroupBox.ResumeLayout(false);
             this.YourPriceGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.ProductDetailsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,8 +750,6 @@
         private System.Windows.Forms.Label CPUSpeedDataLabel;
         private System.Windows.Forms.Label HDDLabel;
         private System.Windows.Forms.Label HDDDataLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label WebCamLabel;
         private System.Windows.Forms.Label WebCamDataLabel;
         private System.Windows.Forms.Label OSLabel;
@@ -760,5 +761,7 @@
         private System.Windows.Forms.Label SalesTaxLabel;
         private System.Windows.Forms.Label TotalDataLabel;
         private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label GPUTypeLabel;
+        private System.Windows.Forms.Label GPUTypeDataLabel;
     }
 }

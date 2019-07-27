@@ -12,6 +12,7 @@ namespace COMP123_S2019_CompPurchase
 {
     public partial class OrderForm : Form
     {
+        const double SALES_TAX = .13;
         public OrderForm()
         {
             InitializeComponent();
@@ -53,6 +54,33 @@ namespace COMP123_S2019_CompPurchase
         {
             Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
             this.Hide();
+        }
+        /// <summary>
+        /// This is the event handler for the OrderForm activated event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OrderForm_Activated(object sender, EventArgs e)
+        {
+            ConditionDataLabel.Text = Program.computer.Condition;
+            PriceDataLabel.Text = (Program.computer.Cost).ToString("C");
+            PlataformDataLabel.Text = Program.computer.Plataform;
+            OSDataLabel.Text = Program.computer.Os;
+            ManufacturerDataLabel.Text = Program.computer.Manufacturer;
+            ModelDataLabel.Text = Program.computer.Model;
+            MemoryDataLabel.Text = Program.computer.Memory;
+            LCDSizeDataLabel.Text = Program.computer.LcdSize;
+            HDDDataLabel.Text = Program.computer.Hdd;
+            CPUBrandDataLabel.Text = Program.computer.CpuBrand;
+            CPUNumberDataLabel.Text = Program.computer.CpuNumber;
+            GPUTypeDataLabel.Text = Program.computer.GpuType;
+            CPUTypeDataLabel.Text = Program.computer.CpuType;
+            CPUSpeedDataLabel.Text = Program.computer.CpuSpeed;
+            WebCamDataLabel.Text = Program.computer.WebCam;
+            //Calculate Sales Tax
+            SalesTaxDataLabel.Text = (Program.computer.Cost * SALES_TAX).ToString("C");
+            //Calculate Total Price
+            TotalDataLabel.Text = (Program.computer.Cost * (1+ SALES_TAX)).ToString("C");
         }
     }
 }
