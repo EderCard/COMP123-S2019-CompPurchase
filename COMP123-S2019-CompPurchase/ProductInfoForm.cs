@@ -36,7 +36,7 @@ namespace COMP123_S2019_CompPurchase
             this.Hide();
         }
         /// <summary>
-        /// This is the event handler for the SelectAnotherProductButton click event
+        /// This is the shared event handler for the SelectAnotherProductButton and SelectAnotherProductToolStripMenuItem click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -46,14 +46,13 @@ namespace COMP123_S2019_CompPurchase
             this.Hide();
         }
         /// <summary>
-        /// This is the event handler for the ancelButton click event
+        /// This is the shared event handler for the CancelButton and exitToolStripMenuItem click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.START_FORM].Show();
-            this.Hide();
+            Application.Exit();
         }
         /// <summary>
         /// This is the event handler for the OpenMenu option SelectOrderOpenFileDialog event
@@ -63,6 +62,8 @@ namespace COMP123_S2019_CompPurchase
         public void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            //Filter file extension
+            openFileDialog.Filter = "Text documents (*.txt)|*.txt|All files (*.*)|*.*"; 
             openFileDialog.ShowDialog();
         }
         /// <summary>
@@ -73,10 +74,16 @@ namespace COMP123_S2019_CompPurchase
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //Default file name
+            saveFileDialog.FileName = "Product";
+            //Default file extension
+            saveFileDialog.DefaultExt = ".txt";
+            //Filter file extension
+            saveFileDialog.Filter = "Text documents (*.txt)|*.txt"; 
             saveFileDialog.ShowDialog();
         }
         /// <summary>
-        /// This is the evet handler for the ProductInfoForm Activated event
+        /// This is the event handler for the ProductInfoForm Activated event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

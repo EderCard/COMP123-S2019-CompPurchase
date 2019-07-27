@@ -12,8 +12,6 @@ namespace COMP123_S2019_CompPurchase
 {
     public partial class SelectForm : Form
     {
-        // Properties
-       // public products SelectedProduct { get; set; }
         public SelectForm()
         {
             InitializeComponent();
@@ -47,7 +45,7 @@ namespace COMP123_S2019_CompPurchase
             Application.Exit();
         }
         /// <summary>
-        /// This is the event handler for the  SelectForm load event
+        /// This is the event handler for the SelectForm load event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,6 +53,7 @@ namespace COMP123_S2019_CompPurchase
         {
             // TODO: This line of code loads data into the 'dollarComputersDataSet.products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
+
             NextButton.Enabled = false;
         }
         /// <summary>
@@ -64,9 +63,6 @@ namespace COMP123_S2019_CompPurchase
         /// <param name="e"></param>
         private void HardwareListDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            // Store temporal the product selected on the datagrid
-            //products tempProduct = HardwareListDataGridView.CurrentRow.DataBoundItem as products;
-
             //local variables that are used as aliases
             var currentCell = HardwareListDataGridView.CurrentCell;
             var rowIndex = HardwareListDataGridView.CurrentCell.RowIndex;
@@ -76,7 +72,7 @@ namespace COMP123_S2019_CompPurchase
 
             currentRow.Selected = true;
 
-            string outputString = ""; //or string.Empty
+            string outputString = string.Empty;
 
             for (int index = 0; index < columnCount; index++)
             {

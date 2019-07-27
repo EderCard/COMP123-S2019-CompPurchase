@@ -76,10 +76,10 @@
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(698, 516);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(2);
+            this.NextButton.Location = new System.Drawing.Point(724, 526);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(75, 35);
+            this.NextButton.Size = new System.Drawing.Size(50, 25);
             this.NextButton.TabIndex = 0;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(604, 515);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CancelButton.Location = new System.Drawing.Point(634, 526);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(90, 35);
+            this.CancelButton.Size = new System.Drawing.Size(75, 25);
             this.CancelButton.TabIndex = 0;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -100,10 +100,10 @@
             // 
             this.DollarComputerHardwareListLabel.BackColor = System.Drawing.Color.White;
             this.DollarComputerHardwareListLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DollarComputerHardwareListLabel.Location = new System.Drawing.Point(13, 10);
-            this.DollarComputerHardwareListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DollarComputerHardwareListLabel.Location = new System.Drawing.Point(9, 7);
+            this.DollarComputerHardwareListLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.DollarComputerHardwareListLabel.Name = "DollarComputerHardwareListLabel";
-            this.DollarComputerHardwareListLabel.Size = new System.Drawing.Size(760, 35);
+            this.DollarComputerHardwareListLabel.Size = new System.Drawing.Size(765, 24);
             this.DollarComputerHardwareListLabel.TabIndex = 1;
             this.DollarComputerHardwareListLabel.Text = "Dollar Computer Hardware List";
             this.DollarComputerHardwareListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,11 +145,11 @@
             this.powerDataGridViewTextBoxColumn,
             this.webcamDataGridViewTextBoxColumn});
             this.HardwareListDataGridView.DataSource = this.productsBindingSource;
-            this.HardwareListDataGridView.Location = new System.Drawing.Point(13, 47);
-            this.HardwareListDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.HardwareListDataGridView.Location = new System.Drawing.Point(9, 32);
+            this.HardwareListDataGridView.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.HardwareListDataGridView.Name = "HardwareListDataGridView";
             this.HardwareListDataGridView.ReadOnly = true;
-            this.HardwareListDataGridView.Size = new System.Drawing.Size(760, 453);
+            this.HardwareListDataGridView.Size = new System.Drawing.Size(765, 480);
             this.HardwareListDataGridView.TabIndex = 2;
             this.HardwareListDataGridView.SelectionChanged += new System.EventHandler(this.HardwareListDataGridView_SelectionChanged);
             // 
@@ -382,21 +382,22 @@
             // 
             // YourSelectionLabel
             // 
-            this.YourSelectionLabel.Location = new System.Drawing.Point(11, 520);
-            this.YourSelectionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.YourSelectionLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.YourSelectionLabel.Location = new System.Drawing.Point(6, 526);
+            this.YourSelectionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.YourSelectionLabel.Name = "YourSelectionLabel";
-            this.YourSelectionLabel.Size = new System.Drawing.Size(138, 24);
+            this.YourSelectionLabel.Size = new System.Drawing.Size(114, 24);
             this.YourSelectionLabel.TabIndex = 3;
-            this.YourSelectionLabel.Text = "Your Selection:";
+            this.YourSelectionLabel.Text = "Your Selection";
             // 
             // HardwareSelectedLabel
             // 
             this.HardwareSelectedLabel.BackColor = System.Drawing.Color.White;
             this.HardwareSelectedLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HardwareSelectedLabel.Location = new System.Drawing.Point(153, 515);
-            this.HardwareSelectedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.HardwareSelectedLabel.Location = new System.Drawing.Point(114, 526);
+            this.HardwareSelectedLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.HardwareSelectedLabel.Name = "HardwareSelectedLabel";
-            this.HardwareSelectedLabel.Size = new System.Drawing.Size(419, 35);
+            this.HardwareSelectedLabel.Size = new System.Drawing.Size(470, 24);
             this.HardwareSelectedLabel.TabIndex = 4;
             this.HardwareSelectedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -406,7 +407,7 @@
             // 
             // SelectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(784, 561);
@@ -417,8 +418,8 @@
             this.Controls.Add(this.DollarComputerHardwareListLabel);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.NextButton);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Your Computer";
