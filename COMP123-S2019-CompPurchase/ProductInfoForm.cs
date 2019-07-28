@@ -7,15 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace COMP123_S2019_CompPurchase
 {
     public partial class ProductInfoForm : Form
     {
-
         public ProductInfoForm()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// This method populate ProductInfoForm with computer object info 
+        /// </summary>
+        private void PopulateProductInfo()
+        {
+            //Fill up fields only when a product (Computer) is selected
+            if (Program.computer.ProductId != 0)
+            { 
+                ProductIDDataLabel.Text = Program.computer.ProductId.ToString();
+                ConditionDataLabel.Text = Program.computer.Condition;
+                CostDataLabel.Text = Program.computer.Cost.ToString("C");
+                PlataformDataLabel.Text = Program.computer.Plataform;
+                OSDataLabel.Text = Program.computer.Os;
+                ManufacturerDataLabel.Text = Program.computer.Manufacturer;
+                ModelDataLabel.Text = Program.computer.Model;
+                MemoryDataLabel.Text = Program.computer.Memory;
+                LCDSizeDataLabel.Text = Program.computer.LcdSize;
+                HDDDataLabel.Text = Program.computer.Hdd;
+                CPUBrandDataLabel.Text = Program.computer.CpuBrand;
+                CPUNumberDataLabel.Text = Program.computer.CpuNumber;
+                GPUTypeDataLabel.Text = Program.computer.GpuType;
+                CPUTypeDataLabel.Text = Program.computer.CpuType;
+                CPUSpeedDataLabel.Text = Program.computer.CpuSpeed;
+                WebCamDataLabel.Text = Program.computer.WebCam;
+            }
+        }
+        /// <summary>
+        /// This is the event handler for the ProductInfoForm Activated event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProductInfoForm_Activated(object sender, EventArgs e)
+        {
+            PopulateProductInfo();
         }
         /// <summary>
         /// This is the event handler for the ProductInfoForm closing event
@@ -56,19 +91,60 @@ namespace COMP123_S2019_CompPurchase
             Application.Exit();
         }
         /// <summary>
-        /// This is the event handler for the OpenMenu option SelectOrderOpenFileDialog event
+        /// This method opens a file with product (Computer) info and populate a computer object
+        /// </summary>
+        public void OpenProductFile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            //Filter file extension
+            openFileDialog.Filter = "Text documents (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.ShowDialog();
+
+            try
+            {
+                using (StreamReader inputStream = new StreamReader(
+                    File.Open(openFileDialog.FileName, FileMode.Open)))
+                {
+                    //Read stuff from the file into the Computer object
+                    Program.computer.ProductId = int.Parse(inputStream.ReadLine());
+                    Program.computer.Condition = inputStream.ReadLine();
+                    Program.computer.Cost = double.Parse(inputStream.ReadLine());
+                    Program.computer.Plataform = inputStream.ReadLine();
+                    Program.computer.Os = inputStream.ReadLine();
+                    Program.computer.Manufacturer = inputStream.ReadLine();
+                    Program.computer.Model = inputStream.ReadLine();
+                    Program.computer.Memory = inputStream.ReadLine();
+                    Program.computer.LcdSize = inputStream.ReadLine();
+                    Program.computer.Hdd = inputStream.ReadLine();
+                    Program.computer.CpuBrand = inputStream.ReadLine();
+                    Program.computer.CpuNumber = inputStream.ReadLine();
+                    Program.computer.GpuType = inputStream.ReadLine();
+                    Program.computer.CpuType = inputStream.ReadLine();
+                    Program.computer.CpuSpeed = inputStream.ReadLine();
+                    Program.computer.WebCam = inputStream.ReadLine();
+
+                    //Cleanup
+                    inputStream.Close();
+                    inputStream.Dispose();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            PopulateProductInfo();
+        }
+        /// <summary>
+        /// This is the event handler for the OpenToolStripMenuItem click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            //Filter file extension
-            openFileDialog.Filter = "Text documents (*.txt)|*.txt|All files (*.*)|*.*"; 
-            openFileDialog.ShowDialog();
+            OpenProductFile();
         }
         /// <summary>
-        /// This is the event handler for the SavenMenu option SelectOrderOpenFileDialog event
+        /// This is the event handler for the SaveToolStripMenuItem click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -80,32 +156,44 @@ namespace COMP123_S2019_CompPurchase
             //Default file extension
             saveFileDialog.DefaultExt = ".txt";
             //Filter file extension
-            saveFileDialog.Filter = "Text documents (*.txt)|*.txt"; 
+            saveFileDialog.Filter = "Text documents (*.txt)|*.txt";
             saveFileDialog.ShowDialog();
-        }
-        /// <summary>
-        /// This is the event handler for the ProductInfoForm Activated event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ProductInfoForm_Activated(object sender, EventArgs e)
-        {
-            ProductIDDataLabel.Text = Program.computer.ProductId.ToString();
-            ConditionDataLabel.Text = Program.computer.Condition;
-            CostDataLabel.Text = Program.computer.Cost.ToString("C");
-            PlataformDataLabel.Text = Program.computer.Plataform;
-            OSDataLabel.Text = Program.computer.Os;
-            ManufacturerDataLabel.Text = Program.computer.Manufacturer;
-            ModelDataLabel.Text = Program.computer.Model;
-            MemoryDataLabel.Text = Program.computer.Memory;
-            LCDSizeDataLabel.Text = Program.computer.LcdSize;
-            HDDDataLabel.Text = Program.computer.Hdd;
-            CPUBrandDataLabel.Text = Program.computer.CpuBrand;
-            CPUNumberDataLabel.Text = Program.computer.CpuNumber;
-            GPUTypeDataLabel.Text = Program.computer.GpuType;
-            CPUTypeDataLabel.Text = Program.computer.CpuType;
-            CPUSpeedDataLabel.Text = Program.computer.CpuSpeed;
-            WebCamDataLabel.Text = Program.computer.WebCam;
+
+            try
+            { 
+                //Open stream to write
+                using (StreamWriter outputStream = new StreamWriter(
+                    File.Open(saveFileDialog.FileName, FileMode.Create)))
+                {
+                    //Write stuff to the file
+                    outputStream.WriteLine(Program.computer.ProductId);
+                    outputStream.WriteLine(Program.computer.Condition);
+                    outputStream.WriteLine(Program.computer.Cost);
+                    outputStream.WriteLine(Program.computer.Plataform);
+                    outputStream.WriteLine(Program.computer.Os);
+                    outputStream.WriteLine(Program.computer.Manufacturer);
+                    outputStream.WriteLine(Program.computer.Model);
+                    outputStream.WriteLine(Program.computer.Memory);
+                    outputStream.WriteLine(Program.computer.LcdSize);
+                    outputStream.WriteLine(Program.computer.Hdd);
+                    outputStream.WriteLine(Program.computer.CpuBrand);
+                    outputStream.WriteLine(Program.computer.CpuNumber);
+                    outputStream.WriteLine(Program.computer.GpuType);
+                    outputStream.WriteLine(Program.computer.CpuType);
+                    outputStream.WriteLine(Program.computer.CpuSpeed);
+                    outputStream.WriteLine(Program.computer.WebCam);
+
+                    //Cleanup
+                    outputStream.Close();
+                    outputStream.Dispose();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            MessageBox.Show("File saved successfuly!", "Saving...",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
