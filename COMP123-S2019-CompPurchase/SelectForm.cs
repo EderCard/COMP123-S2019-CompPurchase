@@ -64,10 +64,10 @@ namespace COMP123_S2019_CompPurchase
         private void HardwareListDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             //local variables that are used as aliases
-            var currentCell = HardwareListDataGridView.CurrentCell;
-            var rowIndex = HardwareListDataGridView.CurrentCell.RowIndex;
-            var currentRow = HardwareListDataGridView.Rows[rowIndex];
-            var columnCount = HardwareListDataGridView.ColumnCount;
+            var currentCell = ProductsDataGridView.CurrentCell;
+            var rowIndex = ProductsDataGridView.CurrentCell.RowIndex;
+            var currentRow = ProductsDataGridView.Rows[rowIndex];
+            var columnCount = ProductsDataGridView.ColumnCount;
             var cells = currentRow.Cells;
 
             currentRow.Selected = true;
