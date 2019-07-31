@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COMP123_S2019_CompPurchase
+namespace COMP123_S2019_CompPurchase.Views
 {
     partial class AboutForm : Form
     {

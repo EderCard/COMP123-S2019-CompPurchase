@@ -1,4 +1,6 @@
-﻿using System;
+﻿using COMP123_S2019_CompPurchase.Views;
+using COMP123_S2019_CompPurchase.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ namespace COMP123_S2019_CompPurchase
 {
     public static class Program
     {
+        public static Product product;
         public static Computer computer;
         //Using a Dictionary and an ENUM to handle Form Names
         public static Dictionary<FormName, Form> Forms;
@@ -32,6 +35,8 @@ namespace COMP123_S2019_CompPurchase
 
             //creating a computer object
             computer = new Computer();
+
+            product = new Product();
 
             Application.Run(Forms[FormName.SPLASH_FORM]);
         }

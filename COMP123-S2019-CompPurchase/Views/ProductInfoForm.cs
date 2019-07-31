@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace COMP123_S2019_CompPurchase
+namespace COMP123_S2019_CompPurchase.Views
 {
     public partial class ProductInfoForm : Form
     {

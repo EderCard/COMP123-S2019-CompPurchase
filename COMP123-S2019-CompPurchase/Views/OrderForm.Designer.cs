@@ -1,4 +1,4 @@
-﻿namespace COMP123_S2019_CompPurchase
+﻿namespace COMP123_S2019_CompPurchase.Views
 {
     partial class OrderForm
     {
@@ -41,6 +41,7 @@
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SystemComponentsGroupBox = new System.Windows.Forms.GroupBox();
+            this.SystemHorizontalLineLabel = new System.Windows.Forms.Label();
             this.OSLabel = new System.Windows.Forms.Label();
             this.GPUTypeLabel = new System.Windows.Forms.Label();
             this.ProductDetailsPanel = new System.Windows.Forms.Panel();
@@ -71,6 +72,7 @@
             this.ModelDataLabel = new System.Windows.Forms.Label();
             this.ModelLabel = new System.Windows.Forms.Label();
             this.YourPriceGroupBox = new System.Windows.Forms.GroupBox();
+            this.TotalHorizontalLineLabel = new System.Windows.Forms.Label();
             this.TotalLabel = new System.Windows.Forms.Label();
             this.PriceDataLabel = new System.Windows.Forms.Label();
             this.SalesTaxDataLabel = new System.Windows.Forms.Label();
@@ -79,8 +81,6 @@
             this.PriceLabel = new System.Windows.Forms.Label();
             this.dollarComputersDataSet1 = new COMP123_S2019_CompPurchase.DollarComputersDataSet();
             this.ProductPictureBox = new System.Windows.Forms.PictureBox();
-            this.SystemHorizontalLineLabel = new System.Windows.Forms.Label();
-            this.TotalHorizontalLineLabel = new System.Windows.Forms.Label();
             this.OrderFormMenuStrip.SuspendLayout();
             this.SystemComponentsGroupBox.SuspendLayout();
             this.ProductDetailsPanel.SuspendLayout();
@@ -156,7 +156,7 @@
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.ExitToolStripMenuItem.Text = "E&xit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -172,7 +172,7 @@
             // 
             this.BackToolStripMenuItem.Name = "BackToolStripMenuItem";
             this.BackToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.BackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BackToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.BackToolStripMenuItem.Text = "&Back";
             this.BackToolStripMenuItem.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -187,7 +187,7 @@
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.AboutToolStripMenuItem.Text = "&About...";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -219,6 +219,14 @@
             this.SystemComponentsGroupBox.TabIndex = 6;
             this.SystemComponentsGroupBox.TabStop = false;
             this.SystemComponentsGroupBox.Text = "System Components";
+            // 
+            // SystemHorizontalLineLabel
+            // 
+            this.SystemHorizontalLineLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.SystemHorizontalLineLabel.Location = new System.Drawing.Point(0, 115);
+            this.SystemHorizontalLineLabel.Name = "SystemHorizontalLineLabel";
+            this.SystemHorizontalLineLabel.Size = new System.Drawing.Size(438, 2);
+            this.SystemHorizontalLineLabel.TabIndex = 31;
             // 
             // OSLabel
             // 
@@ -594,6 +602,14 @@
             this.YourPriceGroupBox.TabStop = false;
             this.YourPriceGroupBox.Text = "Your Price";
             // 
+            // TotalHorizontalLineLabel
+            // 
+            this.TotalHorizontalLineLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TotalHorizontalLineLabel.Location = new System.Drawing.Point(0, 122);
+            this.TotalHorizontalLineLabel.Name = "TotalHorizontalLineLabel";
+            this.TotalHorizontalLineLabel.Size = new System.Drawing.Size(316, 2);
+            this.TotalHorizontalLineLabel.TabIndex = 32;
+            // 
             // TotalLabel
             // 
             this.TotalLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -684,28 +700,13 @@
             this.ProductPictureBox.TabIndex = 8;
             this.ProductPictureBox.TabStop = false;
             // 
-            // SystemHorizontalLineLabel
-            // 
-            this.SystemHorizontalLineLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.SystemHorizontalLineLabel.Location = new System.Drawing.Point(0, 115);
-            this.SystemHorizontalLineLabel.Name = "SystemHorizontalLineLabel";
-            this.SystemHorizontalLineLabel.Size = new System.Drawing.Size(438, 2);
-            this.SystemHorizontalLineLabel.TabIndex = 31;
-            // 
-            // TotalHorizontalLineLabel
-            // 
-            this.TotalHorizontalLineLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TotalHorizontalLineLabel.Location = new System.Drawing.Point(0, 122);
-            this.TotalHorizontalLineLabel.Name = "TotalHorizontalLineLabel";
-            this.TotalHorizontalLineLabel.Size = new System.Drawing.Size(316, 2);
-            this.TotalHorizontalLineLabel.TabIndex = 32;
-            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ControlBox = false;
             this.Controls.Add(this.ProductPictureBox);
             this.Controls.Add(this.YourPriceGroupBox);
             this.Controls.Add(this.SystemComponentsGroupBox);

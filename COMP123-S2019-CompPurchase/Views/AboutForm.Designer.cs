@@ -1,4 +1,4 @@
-﻿namespace COMP123_S2019_CompPurchase
+﻿namespace COMP123_S2019_CompPurchase.Views
 {
     partial class AboutForm
     {

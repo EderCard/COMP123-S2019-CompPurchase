@@ -15,7 +15,7 @@ using System.Windows.Forms;
  * Created on: July 22, 2019.
  * V: 1.0.0-00
  */
-namespace COMP123_S2019_CompPurchase
+namespace COMP123_S2019_CompPurchase.Views
 {
     public partial class SplashForm : Form
     {

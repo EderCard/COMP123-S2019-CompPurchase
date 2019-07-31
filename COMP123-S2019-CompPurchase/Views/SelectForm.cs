@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COMP123_S2019_CompPurchase
+namespace COMP123_S2019_CompPurchase.Views
 {
     public partial class SelectForm : Form
     {
@@ -103,6 +103,7 @@ namespace COMP123_S2019_CompPurchase
                                          (Program.computer.Cost).ToString("C");
 
             NextButton.Enabled = true;
+
         }
     }
 }
