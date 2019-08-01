@@ -12,7 +12,7 @@ namespace COMP123_S2019_CompPurchase.Views
 {
     public partial class OrderForm : Form
     {
-        const double SALES_TAX = .13;
+        const decimal SALES_TAX = 0.13m;
         public OrderForm()
         {
             InitializeComponent();
@@ -63,25 +63,25 @@ namespace COMP123_S2019_CompPurchase.Views
         /// <param name="e"></param>
         private void OrderForm_Activated(object sender, EventArgs e)
         {
-            ConditionDataLabel.Text = Program.computer.Condition;
-            PriceDataLabel.Text = (Program.computer.Cost).ToString("C");
-            PlataformDataLabel.Text = Program.computer.Plataform;
-            OSDataLabel.Text = Program.computer.Os;
-            ManufacturerDataLabel.Text = Program.computer.Manufacturer;
-            ModelDataLabel.Text = Program.computer.Model;
-            MemoryDataLabel.Text = Program.computer.Memory;
-            LCDSizeDataLabel.Text = Program.computer.LcdSize;
-            HDDDataLabel.Text = Program.computer.Hdd;
-            CPUBrandDataLabel.Text = Program.computer.CpuBrand;
-            CPUNumberDataLabel.Text = Program.computer.CpuNumber;
-            GPUTypeDataLabel.Text = Program.computer.GpuType;
-            CPUTypeDataLabel.Text = Program.computer.CpuType;
-            CPUSpeedDataLabel.Text = Program.computer.CpuSpeed;
-            WebCamDataLabel.Text = Program.computer.WebCam;
+            ConditionDataLabel.Text = Program.product.condition;
+            PriceDataLabel.Text = Program.product.cost.ToString();
+            PlataformDataLabel.Text = Program.product.platform;
+            OSDataLabel.Text = Program.product.OS;
+            ManufacturerDataLabel.Text = Program.product.manufacturer;
+            ModelDataLabel.Text = Program.product.model;
+            MemoryDataLabel.Text = Program.product.RAM_size;
+            LCDSizeDataLabel.Text = Program.product.displaytype;
+            HDDDataLabel.Text = Program.product.HDD_size;
+            CPUBrandDataLabel.Text = Program.product.CPU_brand;
+            CPUNumberDataLabel.Text = Program.product.CPU_number;
+            GPUTypeDataLabel.Text = Program.product.GPU_Type;
+            CPUTypeDataLabel.Text = Program.product.CPU_type;
+            CPUSpeedDataLabel.Text = Program.product.CPU_speed;
+            WebCamDataLabel.Text = Program.product.webcam;
             //Calculate Sales Tax
-            SalesTaxDataLabel.Text = (Program.computer.Cost * SALES_TAX).ToString("C");
+            SalesTaxDataLabel.Text = (Program.product.cost * SALES_TAX).ToString();
             //Calculate Total Price
-            TotalDataLabel.Text = (Program.computer.Cost * (1+ SALES_TAX)).ToString("C");
+            TotalDataLabel.Text = (Program.product.cost * (1+ SALES_TAX)).ToString();
         }
         /// <summary>
         /// This is the evnt handler for the PrintToolStripMenuItem click event

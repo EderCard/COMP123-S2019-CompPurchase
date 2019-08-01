@@ -11,7 +11,7 @@ namespace COMP123_S2019_CompPurchase
     public static class Program
     {
         public static Product product;
-        public static Computer computer;
+
         //Using a Dictionary and an ENUM to handle Form Names
         public static Dictionary<FormName, Form> Forms;
 
@@ -33,9 +33,7 @@ namespace COMP123_S2019_CompPurchase
             Forms.Add(FormName.ORDER_FORM, new OrderForm());
             Forms.Add(FormName.ABOUT_FORM, new AboutForm());
 
-            //creating a computer object
-            computer = new Computer();
-
+            //creating a product object
             product = new Product();
 
             Application.Run(Forms[FormName.SPLASH_FORM]);

@@ -23,24 +23,24 @@ namespace COMP123_S2019_CompPurchase.Views
         private void PopulateProductInfo()
         {
             //Fill up fields only when a product (Computer) is selected
-            if (Program.computer.ProductId != 0)
+            if (Program.product.productID != 0)
             {
-                ProductIDDataLabel.Text = Program.computer.ProductId.ToString();
-                ConditionDataLabel.Text = Program.computer.Condition;
-                CostDataLabel.Text = Program.computer.Cost.ToString("C");
-                PlataformDataLabel.Text = Program.computer.Plataform;
-                OSDataLabel.Text = Program.computer.Os;
-                ManufacturerDataLabel.Text = Program.computer.Manufacturer;
-                ModelDataLabel.Text = Program.computer.Model;
-                MemoryDataLabel.Text = Program.computer.Memory;
-                LCDSizeDataLabel.Text = Program.computer.LcdSize;
-                HDDDataLabel.Text = Program.computer.Hdd;
-                CPUBrandDataLabel.Text = Program.computer.CpuBrand;
-                CPUNumberDataLabel.Text = Program.computer.CpuNumber;
-                GPUTypeDataLabel.Text = Program.computer.GpuType;
-                CPUTypeDataLabel.Text = Program.computer.CpuType;
-                CPUSpeedDataLabel.Text = Program.computer.CpuSpeed;
-                WebCamDataLabel.Text = Program.computer.WebCam;
+                ProductIDDataLabel.Text = Program.product.productID.ToString();
+                ConditionDataLabel.Text = Program.product.condition;
+                CostDataLabel.Text = Program.product.cost.ToString();
+                PlataformDataLabel.Text = Program.product.platform;
+                OSDataLabel.Text = Program.product.OS;
+                ManufacturerDataLabel.Text = Program.product.manufacturer;
+                ModelDataLabel.Text = Program.product.model;
+                MemoryDataLabel.Text = Program.product.RAM_size;
+                LCDSizeDataLabel.Text = Program.product.displaytype;
+                HDDDataLabel.Text = Program.product.HDD_size;
+                CPUBrandDataLabel.Text = Program.product.CPU_brand;
+                CPUNumberDataLabel.Text = Program.product.CPU_number;
+                GPUTypeDataLabel.Text = Program.product.GPU_Type;
+                CPUTypeDataLabel.Text = Program.product.CPU_type;
+                CPUSpeedDataLabel.Text = Program.product.CPU_speed;
+                WebCamDataLabel.Text = Program.product.webcam;
             }
         }
         /// <summary>
@@ -113,22 +113,22 @@ namespace COMP123_S2019_CompPurchase.Views
                         File.Open(SelectOrderOpenFileDialog.FileName, FileMode.Open)))
                     {
                         //Read stuff from the file into the Computer object
-                        Program.computer.ProductId = int.Parse(inputStream.ReadLine());
-                        Program.computer.Condition = inputStream.ReadLine();
-                        Program.computer.Cost = double.Parse(inputStream.ReadLine());
-                        Program.computer.Plataform = inputStream.ReadLine();
-                        Program.computer.Os = inputStream.ReadLine();
-                        Program.computer.Manufacturer = inputStream.ReadLine();
-                        Program.computer.Model = inputStream.ReadLine();
-                        Program.computer.Memory = inputStream.ReadLine();
-                        Program.computer.LcdSize = inputStream.ReadLine();
-                        Program.computer.Hdd = inputStream.ReadLine();
-                        Program.computer.CpuBrand = inputStream.ReadLine();
-                        Program.computer.CpuNumber = inputStream.ReadLine();
-                        Program.computer.GpuType = inputStream.ReadLine();
-                        Program.computer.CpuType = inputStream.ReadLine();
-                        Program.computer.CpuSpeed = inputStream.ReadLine();
-                        Program.computer.WebCam = inputStream.ReadLine();
+                        Program.product.productID = short.Parse(inputStream.ReadLine());
+                        Program.product.condition = inputStream.ReadLine();
+                        Program.product.cost = decimal.Parse(inputStream.ReadLine());
+                        Program.product.platform = inputStream.ReadLine();
+                        Program.product.OS = inputStream.ReadLine();
+                        Program.product.manufacturer = inputStream.ReadLine();
+                        Program.product.model = inputStream.ReadLine();
+                        Program.product.RAM_size = inputStream.ReadLine();
+                        Program.product.displaytype = inputStream.ReadLine();
+                        Program.product.HDD_size = inputStream.ReadLine();
+                        Program.product.CPU_brand = inputStream.ReadLine();
+                        Program.product.CPU_number = inputStream.ReadLine();
+                        Program.product.GPU_Type = inputStream.ReadLine();
+                        Program.product.CPU_type = inputStream.ReadLine();
+                        Program.product.CPU_speed = inputStream.ReadLine();
+                        Program.product.webcam = inputStream.ReadLine();
 
                         //Cleanup
                         inputStream.Close();
@@ -166,22 +166,22 @@ namespace COMP123_S2019_CompPurchase.Views
                         File.Open(SelectOrderSaveFileDialog.FileName, FileMode.Create)))
                     {
                         //Write stuff to the file
-                        outputStream.WriteLine(Program.computer.ProductId.ToString());
-                        outputStream.WriteLine(Program.computer.Condition);
-                        outputStream.WriteLine(Program.computer.Cost);
-                        outputStream.WriteLine(Program.computer.Plataform);
-                        outputStream.WriteLine(Program.computer.Os);
-                        outputStream.WriteLine(Program.computer.Manufacturer);
-                        outputStream.WriteLine(Program.computer.Model);
-                        outputStream.WriteLine(Program.computer.Memory);
-                        outputStream.WriteLine(Program.computer.LcdSize);
-                        outputStream.WriteLine(Program.computer.Hdd);
-                        outputStream.WriteLine(Program.computer.CpuBrand);
-                        outputStream.WriteLine(Program.computer.CpuNumber);
-                        outputStream.WriteLine(Program.computer.GpuType);
-                        outputStream.WriteLine(Program.computer.CpuType);
-                        outputStream.WriteLine(Program.computer.CpuSpeed);
-                        outputStream.WriteLine(Program.computer.WebCam);
+                        outputStream.WriteLine(Program.product.productID.ToString());
+                        outputStream.WriteLine(Program.product.condition);
+                        outputStream.WriteLine(Program.product.cost);
+                        outputStream.WriteLine(Program.product.platform);
+                        outputStream.WriteLine(Program.product.OS);
+                        outputStream.WriteLine(Program.product.manufacturer);
+                        outputStream.WriteLine(Program.product.model);
+                        outputStream.WriteLine(Program.product.RAM_size);
+                        outputStream.WriteLine(Program.product.displaytype);
+                        outputStream.WriteLine(Program.product.HDD_size);
+                        outputStream.WriteLine(Program.product.CPU_brand);
+                        outputStream.WriteLine(Program.product.CPU_number);
+                        outputStream.WriteLine(Program.product.GPU_Type);
+                        outputStream.WriteLine(Program.product.CPU_type);
+                        outputStream.WriteLine(Program.product.CPU_speed);
+                        outputStream.WriteLine(Program.product.webcam);
 
                         //Cleanup
                         outputStream.Close();

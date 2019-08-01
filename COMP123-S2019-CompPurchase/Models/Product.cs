@@ -5,7 +5,44 @@ namespace COMP123_S2019_CompPurchase.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    
+    /// <summary>
+    /// ENUM to store computer fields
+    /// </summary>
+    enum ComputersFields
+    {
+        PRODUCT_ID,
+        COST,
+        MANUFACTURER,
+        MODEL,
+        RAM_TYPE,
+        RAM_SIZE,
+        DISPLAY_TYPE,
+        SCREEN_SIZE,
+        RESOLUTION,
+        CPU_CLASS,
+        CPU_BRAND,
+        CPU_TYPE,
+        CPU_SPEED,
+        CPU_NUMBER,
+        CONDITION,
+        OS,
+        PLATFORM,
+        HDD_SIZE,
+        HDD_SPEED,
+        GPU_TYPE,
+        OPTICAL_DRIVE,
+        AUDIO_TYPE,
+        LAN,
+        WIFI,
+        WIDTH,
+        HEIGHT,
+        DEPTH,
+        WEIGHT,
+        POWER,
+        WEBCAM,
+        NUMBER_OF_FIELDS
+    }
     public partial class Product
     {
         public short productID { get; set; }
