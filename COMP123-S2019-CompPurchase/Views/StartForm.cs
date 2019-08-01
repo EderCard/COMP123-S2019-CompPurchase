@@ -53,7 +53,7 @@ namespace COMP123_S2019_CompPurchase.Views
         {
             Program.Forms[FormName.PRODUCT_INFO_FORM].Show();
             this.Hide();
-            //Program.Forms[FormName.PRODUCT_INFO_FORM].OpenProductFile();
+            //Program.Forms[FormName.PRODUCT_INFO_FORM].OpenToolStripMenuItem_Click(sender, e);
         }
     }
 }

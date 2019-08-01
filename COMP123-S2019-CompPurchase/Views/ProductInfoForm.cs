@@ -24,7 +24,7 @@ namespace COMP123_S2019_CompPurchase.Views
         {
             //Fill up fields only when a product (Computer) is selected
             if (Program.computer.ProductId != 0)
-            { 
+            {
                 ProductIDDataLabel.Text = Program.computer.ProductId.ToString();
                 ConditionDataLabel.Text = Program.computer.Condition;
                 CostDataLabel.Text = Program.computer.Cost.ToString("C");
@@ -91,57 +91,56 @@ namespace COMP123_S2019_CompPurchase.Views
             Application.Exit();
         }
         /// <summary>
-        /// This method opens a file with product (Computer) info and populate a computer object
-        /// </summary>
-        public void OpenProductFile()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            //Filter file extension
-            openFileDialog.Filter = "Text documents (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog.ShowDialog();
-
-            try
-            {
-                using (StreamReader inputStream = new StreamReader(
-                    File.Open(openFileDialog.FileName, FileMode.Open)))
-                {
-                    //Read stuff from the file into the Computer object
-                    Program.computer.ProductId = int.Parse(inputStream.ReadLine());
-                    Program.computer.Condition = inputStream.ReadLine();
-                    Program.computer.Cost = double.Parse(inputStream.ReadLine());
-                    Program.computer.Plataform = inputStream.ReadLine();
-                    Program.computer.Os = inputStream.ReadLine();
-                    Program.computer.Manufacturer = inputStream.ReadLine();
-                    Program.computer.Model = inputStream.ReadLine();
-                    Program.computer.Memory = inputStream.ReadLine();
-                    Program.computer.LcdSize = inputStream.ReadLine();
-                    Program.computer.Hdd = inputStream.ReadLine();
-                    Program.computer.CpuBrand = inputStream.ReadLine();
-                    Program.computer.CpuNumber = inputStream.ReadLine();
-                    Program.computer.GpuType = inputStream.ReadLine();
-                    Program.computer.CpuType = inputStream.ReadLine();
-                    Program.computer.CpuSpeed = inputStream.ReadLine();
-                    Program.computer.WebCam = inputStream.ReadLine();
-
-                    //Cleanup
-                    inputStream.Close();
-                    inputStream.Dispose();
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-            PopulateProductInfo();
-        }
-        /// <summary>
         /// This is the event handler for the OpenToolStripMenuItem click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenProductFile();
+            //Configure the file dialog
+            SelectOrderOpenFileDialog.FileName = "Product";
+            SelectOrderOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            SelectOrderOpenFileDialog.Filter = "Text documents (*.txt)|*.txt| All Files(*.*)|*.*";
+            SelectOrderOpenFileDialog.DefaultExt = ".txt";
+
+            //Open file dialog
+            var result = SelectOrderOpenFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                try
+                {
+                    using (StreamReader inputStream = new StreamReader(
+                        File.Open(SelectOrderOpenFileDialog.FileName, FileMode.Open)))
+                    {
+                        //Read stuff from the file into the Computer object
+                        Program.computer.ProductId = int.Parse(inputStream.ReadLine());
+                        Program.computer.Condition = inputStream.ReadLine();
+                        Program.computer.Cost = double.Parse(inputStream.ReadLine());
+                        Program.computer.Plataform = inputStream.ReadLine();
+                        Program.computer.Os = inputStream.ReadLine();
+                        Program.computer.Manufacturer = inputStream.ReadLine();
+                        Program.computer.Model = inputStream.ReadLine();
+                        Program.computer.Memory = inputStream.ReadLine();
+                        Program.computer.LcdSize = inputStream.ReadLine();
+                        Program.computer.Hdd = inputStream.ReadLine();
+                        Program.computer.CpuBrand = inputStream.ReadLine();
+                        Program.computer.CpuNumber = inputStream.ReadLine();
+                        Program.computer.GpuType = inputStream.ReadLine();
+                        Program.computer.CpuType = inputStream.ReadLine();
+                        Program.computer.CpuSpeed = inputStream.ReadLine();
+                        Program.computer.WebCam = inputStream.ReadLine();
+
+                        //Cleanup
+                        inputStream.Close();
+                        inputStream.Dispose();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+            PopulateProductInfo();
         }
         /// <summary>
         /// This is the event handler for the SaveToolStripMenuItem click event
@@ -150,50 +149,52 @@ namespace COMP123_S2019_CompPurchase.Views
         /// <param name="e"></param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //Default file name
-            saveFileDialog.FileName = "Product";
-            //Default file extension
-            saveFileDialog.DefaultExt = ".txt";
-            //Filter file extension
-            saveFileDialog.Filter = "Text documents (*.txt)|*.txt";
-            saveFileDialog.ShowDialog();
+            //Configure the file dialog
+            SelectOrderSaveFileDialog.FileName = "Product";
+            SelectOrderSaveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            SelectOrderSaveFileDialog.Filter= "Text documents (*.txt)|*.txt| All Files(*.*)|*.*";
+            SelectOrderSaveFileDialog.DefaultExt = ".txt";
 
-            try
-            { 
-                //Open stream to write
-                using (StreamWriter outputStream = new StreamWriter(
-                    File.Open(saveFileDialog.FileName, FileMode.Create)))
-                {
-                    //Write stuff to the file
-                    outputStream.WriteLine(Program.computer.ProductId);
-                    outputStream.WriteLine(Program.computer.Condition);
-                    outputStream.WriteLine(Program.computer.Cost);
-                    outputStream.WriteLine(Program.computer.Plataform);
-                    outputStream.WriteLine(Program.computer.Os);
-                    outputStream.WriteLine(Program.computer.Manufacturer);
-                    outputStream.WriteLine(Program.computer.Model);
-                    outputStream.WriteLine(Program.computer.Memory);
-                    outputStream.WriteLine(Program.computer.LcdSize);
-                    outputStream.WriteLine(Program.computer.Hdd);
-                    outputStream.WriteLine(Program.computer.CpuBrand);
-                    outputStream.WriteLine(Program.computer.CpuNumber);
-                    outputStream.WriteLine(Program.computer.GpuType);
-                    outputStream.WriteLine(Program.computer.CpuType);
-                    outputStream.WriteLine(Program.computer.CpuSpeed);
-                    outputStream.WriteLine(Program.computer.WebCam);
-
-                    //Cleanup
-                    outputStream.Close();
-                    outputStream.Dispose();
-                }
-            }
-            catch (Exception exception)
+            //Open file dialog
+            var result = SelectOrderSaveFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
             {
-                MessageBox.Show(exception.Message);
+                try
+                {
+                    //Open stream to write
+                    using (StreamWriter outputStream = new StreamWriter(
+                        File.Open(SelectOrderSaveFileDialog.FileName, FileMode.Create)))
+                    {
+                        //Write stuff to the file
+                        outputStream.WriteLine(Program.computer.ProductId.ToString());
+                        outputStream.WriteLine(Program.computer.Condition);
+                        outputStream.WriteLine(Program.computer.Cost);
+                        outputStream.WriteLine(Program.computer.Plataform);
+                        outputStream.WriteLine(Program.computer.Os);
+                        outputStream.WriteLine(Program.computer.Manufacturer);
+                        outputStream.WriteLine(Program.computer.Model);
+                        outputStream.WriteLine(Program.computer.Memory);
+                        outputStream.WriteLine(Program.computer.LcdSize);
+                        outputStream.WriteLine(Program.computer.Hdd);
+                        outputStream.WriteLine(Program.computer.CpuBrand);
+                        outputStream.WriteLine(Program.computer.CpuNumber);
+                        outputStream.WriteLine(Program.computer.GpuType);
+                        outputStream.WriteLine(Program.computer.CpuType);
+                        outputStream.WriteLine(Program.computer.CpuSpeed);
+                        outputStream.WriteLine(Program.computer.WebCam);
+
+                        //Cleanup
+                        outputStream.Close();
+                        outputStream.Dispose();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+                MessageBox.Show("File saved successfully!", "Saving...",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            MessageBox.Show("File saved successfuly!", "Saving...",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
