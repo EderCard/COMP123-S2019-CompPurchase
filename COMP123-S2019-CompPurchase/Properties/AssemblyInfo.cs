@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Phone Contact: +1-555-5555555")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Centennial College")]
-[assembly: AssemblyProduct("www.dollarcomputer.ca")]
+[assembly: AssemblyProduct("www.dollarcomputers.ca")]
 [assembly: AssemblyCopyright("Copyright ©  2019 - Ederson Cardoso")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

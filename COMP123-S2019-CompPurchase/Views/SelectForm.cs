@@ -8,7 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
+ * Name: Ederson Cardoso
+ *   ID: 301033332
+ *   
+ * This program calculate simulate a computer purchase from Dollar Computers store.
+ * Created on: July 22, 2019.
+ * Last modified on: August 01, 2019.
+ * V: 1.0.0-00
+ */
 namespace COMP123_S2019_CompPurchase.Views
 {
     public partial class SelectForm : Form
@@ -55,54 +63,56 @@ namespace COMP123_S2019_CompPurchase.Views
             // TODO: This line of code loads data into the 'dollarComputersDataSet.products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
 
+            //Disable Next button until selection
             NextButton.Enabled = false;
         }
         /// <summary>
-        /// This is the event handler for the HardwareListDataGridView SelectionChanged event
+        /// This is the event handler for the ProductsDataGridView SelectionChanged event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void HardwareListDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void ProductsDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             //local variables that are used as aliases
-            var currentCell = ProductsDataGridView.CurrentCell;
-            var rowIndex = ProductsDataGridView.CurrentCell.RowIndex;
-            var currentRow = ProductsDataGridView.Rows[rowIndex];
-            var columnCount = ProductsDataGridView.ColumnCount;
-            var cells = currentRow.Cells;
+            var _currentCell = ProductsDataGridView.CurrentCell;
+            var _rowIndex = ProductsDataGridView.CurrentCell.RowIndex;
+            var _currentRow = ProductsDataGridView.Rows[_rowIndex];
+            var _columnCount = ProductsDataGridView.ColumnCount;
+            var _cells = _currentRow.Cells;
 
-            currentRow.Selected = true;
+            _currentRow.Selected = true;
 
-            string outputString = string.Empty;
+            string _outputString = string.Empty;
 
-            for (int index = 0; index < columnCount; index++)
+            for (int _index = 0; _index < _columnCount; _index++)
             {
-                outputString += cells[index].Value + " ";
+                _outputString += _cells[_index].Value + " ";
             }
 
             //Populate a computer object with info from a line selected in DataGridView
-            Program.product.productID = short.Parse(cells[(int)ProductFields.PRODUCT_ID].Value.ToString());
-            Program.product.cost = decimal.Parse(cells[(int)ProductFields.COST].Value.ToString());
-            Program.product.manufacturer = cells[(int)ProductFields.MANUFACTURER].Value.ToString();
-            Program.product.condition = cells[(int)ProductFields.CONDITION].Value.ToString();
-            Program.product.platform = cells[(int)ProductFields.PLATFORM].Value.ToString();
-            Program.product.OS = cells[(int)ProductFields.OS].Value.ToString();
-            Program.product.model = cells[(int)ProductFields.MODEL].Value.ToString();
-            Program.product.RAM_size = cells[(int)ProductFields.RAM_SIZE].Value.ToString();
-            Program.product.screensize = cells[(int)ProductFields.SCREEN_SIZE].Value.ToString();
-            Program.product.HDD_size = cells[(int)ProductFields.HDD_SIZE].Value.ToString();
-            Program.product.CPU_brand = cells[(int)ProductFields.CPU_BRAND].Value.ToString();
-            Program.product.CPU_number = cells[(int)ProductFields.CPU_NUMBER].Value.ToString();
-            Program.product.GPU_Type = cells[(int)ProductFields.GPU_TYPE].Value.ToString();
-            Program.product.CPU_type = cells[(int)ProductFields.CPU_TYPE].Value.ToString();
-            Program.product.CPU_speed = cells[(int)ProductFields.CPU_SPEED].Value.ToString();
-            Program.product.webcam = cells[(int)ProductFields.WEBCAM].Value.ToString();
+            Program.product.productID = short.Parse(_cells[(int)ProductFields.PRODUCT_ID].Value.ToString());
+            Program.product.cost = decimal.Parse(_cells[(int)ProductFields.COST].Value.ToString());
+            Program.product.manufacturer = _cells[(int)ProductFields.MANUFACTURER].Value.ToString();
+            Program.product.condition = _cells[(int)ProductFields.CONDITION].Value.ToString();
+            Program.product.platform = _cells[(int)ProductFields.PLATFORM].Value.ToString();
+            Program.product.OS = _cells[(int)ProductFields.OS].Value.ToString();
+            Program.product.model = _cells[(int)ProductFields.MODEL].Value.ToString();
+            Program.product.RAM_size = _cells[(int)ProductFields.RAM_SIZE].Value.ToString();
+            Program.product.screensize = _cells[(int)ProductFields.SCREEN_SIZE].Value.ToString();
+            Program.product.HDD_size = _cells[(int)ProductFields.HDD_SIZE].Value.ToString();
+            Program.product.CPU_brand = _cells[(int)ProductFields.CPU_BRAND].Value.ToString();
+            Program.product.CPU_number = _cells[(int)ProductFields.CPU_NUMBER].Value.ToString();
+            Program.product.GPU_Type = _cells[(int)ProductFields.GPU_TYPE].Value.ToString();
+            Program.product.CPU_type = _cells[(int)ProductFields.CPU_TYPE].Value.ToString();
+            Program.product.CPU_speed = _cells[(int)ProductFields.CPU_SPEED].Value.ToString();
+            Program.product.webcam = _cells[(int)ProductFields.WEBCAM].Value.ToString();
 
-            //Populate Your Selection Label
-            HardwareSelectedLabel.Text = Program.product.manufacturer.ToString() + " " +
+            //Populate Your Selection TextBox
+            SelectedProductTextBox.Text = Program.product.manufacturer.ToString() + " " +
                                          Program.product.model.ToString() + " " +
                                          ((decimal)Program.product.cost).ToString("C");
 
+            //Enable Next button after selecion
             NextButton.Enabled = true;
         }
     }

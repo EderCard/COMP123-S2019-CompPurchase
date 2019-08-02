@@ -7,12 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
+ * Name: Ederson Cardoso
+ *   ID: 301033332
+ *   
+ * This program calculate simulate a computer purchase from Dollar Computers store.
+ * Created on: July 22, 2019.
+ * Last modified on: August 01, 2019.
+ * V: 1.0.0-00
+ */
 namespace COMP123_S2019_CompPurchase.Views
 {
     public partial class OrderForm : Form
     {
-        const decimal SALES_TAX = 0.13m;
+        /// <summary>
+        /// Constant that represents the Tax amount over sales
+        /// </summary>
+        const decimal _SALES_TAX = 0.13m;
         public OrderForm()
         {
             InitializeComponent();
@@ -33,7 +44,9 @@ namespace COMP123_S2019_CompPurchase.Views
         /// <param name="e"></param>
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thanks for your purchase.\n\nYour Order will be processed in 7-10 business days.", 
+            MessageBox.Show(
+                "Thanks for your purchase." + "\n\n" +
+                "Your order will be processed in 7-10 business days.", 
                 "Order Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
@@ -79,9 +92,9 @@ namespace COMP123_S2019_CompPurchase.Views
             CPUSpeedDataLabel.Text = Program.product.CPU_speed;
             WebCamDataLabel.Text = Program.product.webcam;
             //Calculate Sales Tax
-            SalesTaxDataLabel.Text = ((decimal)(Program.product.cost * SALES_TAX)).ToString("C");
+            SalesTaxDataLabel.Text = ((decimal)(Program.product.cost * _SALES_TAX)).ToString("C");
             //Calculate Total Price
-            TotalDataLabel.Text = ((decimal)(Program.product.cost * (1+ SALES_TAX))).ToString("C");
+            TotalDataLabel.Text = ((decimal)(Program.product.cost * (1+ _SALES_TAX))).ToString("C");
         }
         /// <summary>
         /// This is the evnt handler for the PrintToolStripMenuItem click event

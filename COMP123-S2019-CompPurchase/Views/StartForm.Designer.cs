@@ -39,7 +39,7 @@
             // StartNewOrderButton
             // 
             this.StartNewOrderButton.Location = new System.Drawing.Point(47, 221);
-            this.StartNewOrderButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.StartNewOrderButton.Margin = new System.Windows.Forms.Padding(1);
             this.StartNewOrderButton.Name = "StartNewOrderButton";
             this.StartNewOrderButton.Size = new System.Drawing.Size(185, 25);
             this.StartNewOrderButton.TabIndex = 0;
@@ -50,7 +50,7 @@
             // OpenSavedOrderButton
             // 
             this.OpenSavedOrderButton.Location = new System.Drawing.Point(47, 263);
-            this.OpenSavedOrderButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.OpenSavedOrderButton.Margin = new System.Windows.Forms.Padding(1);
             this.OpenSavedOrderButton.Name = "OpenSavedOrderButton";
             this.OpenSavedOrderButton.Size = new System.Drawing.Size(185, 25);
             this.OpenSavedOrderButton.TabIndex = 0;
@@ -61,7 +61,7 @@
             // ExitButton
             // 
             this.ExitButton.Location = new System.Drawing.Point(47, 305);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(1);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(185, 25);
             this.ExitButton.TabIndex = 0;
@@ -86,7 +86,7 @@
             // 
             this.StartPictureBox.Image = global::COMP123_S2019_CompPurchase.Properties.Resources.StartImage;
             this.StartPictureBox.Location = new System.Drawing.Point(47, 55);
-            this.StartPictureBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.StartPictureBox.Margin = new System.Windows.Forms.Padding(1);
             this.StartPictureBox.Name = "StartPictureBox";
             this.StartPictureBox.Size = new System.Drawing.Size(185, 145);
             this.StartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

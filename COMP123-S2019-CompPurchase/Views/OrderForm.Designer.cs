@@ -79,13 +79,11 @@
             this.SalesTaxLabel = new System.Windows.Forms.Label();
             this.TotalDataLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
-            this.dollarComputersDataSet1 = new COMP123_S2019_CompPurchase.DollarComputersDataSet();
             this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.OrderFormMenuStrip.SuspendLayout();
             this.SystemComponentsGroupBox.SuspendLayout();
             this.ProductDetailsPanel.SuspendLayout();
             this.YourPriceGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,7 +147,7 @@
             this.PrintToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem";
             this.PrintToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.PrintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.PrintToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.PrintToolStripMenuItem.Text = "&Print";
             this.PrintToolStripMenuItem.Click += new System.EventHandler(this.PrintToolStripMenuItem_Click);
             // 
@@ -685,11 +683,6 @@
             this.PriceLabel.Text = "Price";
             this.PriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dollarComputersDataSet1
-            // 
-            this.dollarComputersDataSet1.DataSetName = "DollarComputersDataSet";
-            this.dollarComputersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // ProductPictureBox
             // 
             this.ProductPictureBox.Image = global::COMP123_S2019_CompPurchase.Properties.Resources.Product;
@@ -729,7 +722,6 @@
             this.SystemComponentsGroupBox.ResumeLayout(false);
             this.ProductDetailsPanel.ResumeLayout(false);
             this.YourPriceGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -779,7 +771,6 @@
         private System.Windows.Forms.Label WebCamDataLabel;
         private System.Windows.Forms.Label OSLabel;
         private System.Windows.Forms.Label OSDataLabel;
-        private DollarComputersDataSet dollarComputersDataSet1;
         private System.Windows.Forms.Label TotalLabel;
         private System.Windows.Forms.Label PriceDataLabel;
         private System.Windows.Forms.Label SalesTaxDataLabel;

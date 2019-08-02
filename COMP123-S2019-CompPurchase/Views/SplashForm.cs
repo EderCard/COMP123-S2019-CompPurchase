@@ -11,8 +11,9 @@ using System.Windows.Forms;
  * Name: Ederson Cardoso
  *   ID: 301033332
  *   
- * This program calculate simulate a computer purchase from Dollar Computer store.
+ * This program calculate simulate a computer purchase from Dollar Computers store.
  * Created on: July 22, 2019.
+ * Last modified on: August 01, 2019.
  * V: 1.0.0-00
  */
 namespace COMP123_S2019_CompPurchase.Views
