@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
  *   
  * This program calculate simulate a computer purchase from Dollar Computers store.
  * Created on: July 22, 2019.
- * Last modified on: August 01, 2019.
+ * Last modified on: August 02, 2019.
  * V: 1.0.0-00
  */
 namespace COMP123_S2019_CompPurchase.Views
@@ -60,8 +61,12 @@ namespace COMP123_S2019_CompPurchase.Views
         /// <param name="e"></param>
         private void SelectForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dollarComputersDataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
+            using (var db = new ProductModel())
+            {
+                db.products.Load();
+                productsBindingSource.DataSource = db.products.Local.ToBindingList();
+                db.Dispose();
+            }
 
             //Disable Next button until selection
             NextButton.Enabled = false;
@@ -74,20 +79,9 @@ namespace COMP123_S2019_CompPurchase.Views
         private void ProductsDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             //local variables that are used as aliases
-            var _currentCell = ProductsDataGridView.CurrentCell;
             var _rowIndex = ProductsDataGridView.CurrentCell.RowIndex;
             var _currentRow = ProductsDataGridView.Rows[_rowIndex];
-            var _columnCount = ProductsDataGridView.ColumnCount;
             var _cells = _currentRow.Cells;
-
-            _currentRow.Selected = true;
-
-            string _outputString = string.Empty;
-
-            for (int _index = 0; _index < _columnCount; _index++)
-            {
-                _outputString += _cells[_index].Value + " ";
-            }
 
             //Populate a computer object with info from a line selected in DataGridView
             Program.product.productID = short.Parse(_cells[(int)ProductFields.PRODUCT_ID].Value.ToString());
