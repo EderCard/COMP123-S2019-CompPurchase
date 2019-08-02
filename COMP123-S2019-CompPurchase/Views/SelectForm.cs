@@ -81,27 +81,27 @@ namespace COMP123_S2019_CompPurchase.Views
             }
 
             //Populate a computer object with info from a line selected in DataGridView
-            Program.product.productID = short.Parse(cells[(int)ComputersFields.PRODUCT_ID].Value.ToString());
-            Program.product.cost = decimal.Parse(cells[(int)ComputersFields.COST].Value.ToString());
-            Program.product.manufacturer = cells[(int)ComputersFields.MANUFACTURER].Value.ToString();
-            Program.product.condition = cells[(int)ComputersFields.CONDITION].Value.ToString();
-            Program.product.platform = cells[(int)ComputersFields.PLATFORM].Value.ToString();
-            Program.product.OS = cells[(int)ComputersFields.OS].Value.ToString();
-            Program.product.model = cells[(int)ComputersFields.MODEL].Value.ToString();
-            Program.product.RAM_size = cells[(int)ComputersFields.RAM_SIZE].Value.ToString();
-            Program.product.displaytype = cells[(int)ComputersFields.DISPLAY_TYPE].Value.ToString();
-            Program.product.HDD_size = cells[(int)ComputersFields.HDD_SIZE].Value.ToString();
-            Program.product.CPU_brand = cells[(int)ComputersFields.CPU_BRAND].Value.ToString();
-            Program.product.CPU_number = cells[(int)ComputersFields.CPU_NUMBER].Value.ToString();
-            Program.product.GPU_Type = cells[(int)ComputersFields.GPU_TYPE].Value.ToString();
-            Program.product.CPU_type = cells[(int)ComputersFields.CPU_TYPE].Value.ToString();
-            Program.product.CPU_speed = cells[(int)ComputersFields.CPU_SPEED].Value.ToString();
-            Program.product.webcam = cells[(int)ComputersFields.WEBCAM].Value.ToString();
+            Program.product.productID = short.Parse(cells[(int)ProductFields.PRODUCT_ID].Value.ToString());
+            Program.product.cost = decimal.Parse(cells[(int)ProductFields.COST].Value.ToString());
+            Program.product.manufacturer = cells[(int)ProductFields.MANUFACTURER].Value.ToString();
+            Program.product.condition = cells[(int)ProductFields.CONDITION].Value.ToString();
+            Program.product.platform = cells[(int)ProductFields.PLATFORM].Value.ToString();
+            Program.product.OS = cells[(int)ProductFields.OS].Value.ToString();
+            Program.product.model = cells[(int)ProductFields.MODEL].Value.ToString();
+            Program.product.RAM_size = cells[(int)ProductFields.RAM_SIZE].Value.ToString();
+            Program.product.screensize = cells[(int)ProductFields.SCREEN_SIZE].Value.ToString();
+            Program.product.HDD_size = cells[(int)ProductFields.HDD_SIZE].Value.ToString();
+            Program.product.CPU_brand = cells[(int)ProductFields.CPU_BRAND].Value.ToString();
+            Program.product.CPU_number = cells[(int)ProductFields.CPU_NUMBER].Value.ToString();
+            Program.product.GPU_Type = cells[(int)ProductFields.GPU_TYPE].Value.ToString();
+            Program.product.CPU_type = cells[(int)ProductFields.CPU_TYPE].Value.ToString();
+            Program.product.CPU_speed = cells[(int)ProductFields.CPU_SPEED].Value.ToString();
+            Program.product.webcam = cells[(int)ProductFields.WEBCAM].Value.ToString();
 
             //Populate Your Selection Label
             HardwareSelectedLabel.Text = Program.product.manufacturer.ToString() + " " +
                                          Program.product.model.ToString() + " " +
-                                         (decimal)Program.product.cost;
+                                         ((decimal)Program.product.cost).ToString("C");
 
             NextButton.Enabled = true;
         }

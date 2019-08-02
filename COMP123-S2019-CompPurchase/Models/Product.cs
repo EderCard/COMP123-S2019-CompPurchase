@@ -9,7 +9,7 @@ namespace COMP123_S2019_CompPurchase.Models
     /// <summary>
     /// ENUM to store computer fields
     /// </summary>
-    enum ComputersFields
+    enum ProductFields
     {
         PRODUCT_ID,
         COST,

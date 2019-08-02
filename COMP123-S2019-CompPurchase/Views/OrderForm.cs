@@ -64,13 +64,13 @@ namespace COMP123_S2019_CompPurchase.Views
         private void OrderForm_Activated(object sender, EventArgs e)
         {
             ConditionDataLabel.Text = Program.product.condition;
-            PriceDataLabel.Text = Program.product.cost.ToString();
+            PriceDataLabel.Text = ((decimal)Program.product.cost).ToString("C");
             PlataformDataLabel.Text = Program.product.platform;
             OSDataLabel.Text = Program.product.OS;
             ManufacturerDataLabel.Text = Program.product.manufacturer;
             ModelDataLabel.Text = Program.product.model;
             MemoryDataLabel.Text = Program.product.RAM_size;
-            LCDSizeDataLabel.Text = Program.product.displaytype;
+            LCDSizeDataLabel.Text = Program.product.screensize;
             HDDDataLabel.Text = Program.product.HDD_size;
             CPUBrandDataLabel.Text = Program.product.CPU_brand;
             CPUNumberDataLabel.Text = Program.product.CPU_number;
@@ -79,9 +79,9 @@ namespace COMP123_S2019_CompPurchase.Views
             CPUSpeedDataLabel.Text = Program.product.CPU_speed;
             WebCamDataLabel.Text = Program.product.webcam;
             //Calculate Sales Tax
-            SalesTaxDataLabel.Text = (Program.product.cost * SALES_TAX).ToString();
+            SalesTaxDataLabel.Text = ((decimal)(Program.product.cost * SALES_TAX)).ToString("C");
             //Calculate Total Price
-            TotalDataLabel.Text = (Program.product.cost * (1+ SALES_TAX)).ToString();
+            TotalDataLabel.Text = ((decimal)(Program.product.cost * (1+ SALES_TAX))).ToString("C");
         }
         /// <summary>
         /// This is the evnt handler for the PrintToolStripMenuItem click event

@@ -27,13 +27,13 @@ namespace COMP123_S2019_CompPurchase.Views
             {
                 ProductIDDataLabel.Text = Program.product.productID.ToString();
                 ConditionDataLabel.Text = Program.product.condition;
-                CostDataLabel.Text = Program.product.cost.ToString();
+                CostDataLabel.Text = ((decimal)Program.product.cost).ToString("C");
                 PlataformDataLabel.Text = Program.product.platform;
                 OSDataLabel.Text = Program.product.OS;
                 ManufacturerDataLabel.Text = Program.product.manufacturer;
                 ModelDataLabel.Text = Program.product.model;
                 MemoryDataLabel.Text = Program.product.RAM_size;
-                LCDSizeDataLabel.Text = Program.product.displaytype;
+                LCDSizeDataLabel.Text = Program.product.screensize;
                 HDDDataLabel.Text = Program.product.HDD_size;
                 CPUBrandDataLabel.Text = Program.product.CPU_brand;
                 CPUNumberDataLabel.Text = Program.product.CPU_number;
@@ -121,7 +121,7 @@ namespace COMP123_S2019_CompPurchase.Views
                         Program.product.manufacturer = inputStream.ReadLine();
                         Program.product.model = inputStream.ReadLine();
                         Program.product.RAM_size = inputStream.ReadLine();
-                        Program.product.displaytype = inputStream.ReadLine();
+                        Program.product.screensize = inputStream.ReadLine();
                         Program.product.HDD_size = inputStream.ReadLine();
                         Program.product.CPU_brand = inputStream.ReadLine();
                         Program.product.CPU_number = inputStream.ReadLine();
@@ -174,7 +174,7 @@ namespace COMP123_S2019_CompPurchase.Views
                         outputStream.WriteLine(Program.product.manufacturer);
                         outputStream.WriteLine(Program.product.model);
                         outputStream.WriteLine(Program.product.RAM_size);
-                        outputStream.WriteLine(Program.product.displaytype);
+                        outputStream.WriteLine(Program.product.screensize);
                         outputStream.WriteLine(Program.product.HDD_size);
                         outputStream.WriteLine(Program.product.CPU_brand);
                         outputStream.WriteLine(Program.product.CPU_number);
