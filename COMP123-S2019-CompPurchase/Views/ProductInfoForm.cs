@@ -14,7 +14,7 @@ using System.IO;
  *   
  * This program simulate a computer purchase from Dollar Computers store.
  * Created on: July 22, 2019.
- * Last modified on: August 01, 2019.
+ * Last modified on: August 12, 2019.
  * V: 1.0.0-00
  */
 namespace COMP123_S2019_CompPurchase.Views
@@ -116,7 +116,14 @@ namespace COMP123_S2019_CompPurchase.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog();
+        }
+        /// <summary>
+        /// This method opens a OpenFileDialog.
+        /// </summary>
+        public void OpenFileDialog()
         {
             //Configure the file dialog
             SelectOrderOpenFileDialog.FileName = "Product";
@@ -133,7 +140,7 @@ namespace COMP123_S2019_CompPurchase.Views
                     using (StreamReader inputStream = new StreamReader(
                         File.Open(SelectOrderOpenFileDialog.FileName, FileMode.Open)))
                     {
-                        //Read stuff from the file into the Computer object
+                        //Read stuff from the file into the Product object
                         Program.product.productID = short.Parse(inputStream.ReadLine());
                         Program.product.condition = inputStream.ReadLine();
                         Program.product.cost = decimal.Parse(inputStream.ReadLine());
@@ -215,51 +222,6 @@ namespace COMP123_S2019_CompPurchase.Views
                 }
                 MessageBox.Show("File saved successfully!", "Saving...",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        public void Teste() {
-            //Configure the file dialog
-            SelectOrderOpenFileDialog.FileName = "Product";
-            SelectOrderOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
-            SelectOrderOpenFileDialog.Filter = "Text documents (*.txt)|*.txt| All Files(*.*)|*.*";
-            SelectOrderOpenFileDialog.DefaultExt = ".txt";
-
-            //Open file dialog
-            var _result = SelectOrderOpenFileDialog.ShowDialog();
-            if (_result != DialogResult.Cancel)
-            {
-                try
-                {
-                    using (StreamReader inputStream = new StreamReader(
-                        File.Open(SelectOrderOpenFileDialog.FileName, FileMode.Open)))
-                    {
-                        //Read stuff from the file into the Computer object
-                        Program.product.productID = short.Parse(inputStream.ReadLine());
-                        Program.product.condition = inputStream.ReadLine();
-                        Program.product.cost = decimal.Parse(inputStream.ReadLine());
-                        Program.product.platform = inputStream.ReadLine();
-                        Program.product.OS = inputStream.ReadLine();
-                        Program.product.manufacturer = inputStream.ReadLine();
-                        Program.product.model = inputStream.ReadLine();
-                        Program.product.RAM_size = inputStream.ReadLine();
-                        Program.product.screensize = inputStream.ReadLine();
-                        Program.product.HDD_size = inputStream.ReadLine();
-                        Program.product.CPU_brand = inputStream.ReadLine();
-                        Program.product.CPU_number = inputStream.ReadLine();
-                        Program.product.GPU_Type = inputStream.ReadLine();
-                        Program.product.CPU_type = inputStream.ReadLine();
-                        Program.product.CPU_speed = inputStream.ReadLine();
-                        Program.product.webcam = inputStream.ReadLine();
-
-                        //Cleanup
-                        inputStream.Close();
-                        inputStream.Dispose();
-                    }
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message);
-                }
             }
         }
     }

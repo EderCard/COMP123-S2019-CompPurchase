@@ -15,7 +15,7 @@ using System.Windows.Forms;
  *   
  * This program simulate a computer purchase from Dollar Computers store.
  * Created on: July 22, 2019.
- * Last modified on: August 02, 2019.
+ * Last modified on: August 12, 2019.
  * V: 1.0.0-00
  */
 namespace COMP123_S2019_CompPurchase.Views
@@ -61,11 +61,11 @@ namespace COMP123_S2019_CompPurchase.Views
         /// <param name="e"></param>
         private void SelectForm_Load(object sender, EventArgs e)
         {
-            using (var db = new ProductModel())
+            using (var _db = new ProductModel())
             {
-                db.products.Load();
-                productsBindingSource.DataSource = db.products.Local.ToBindingList();
-                db.Dispose();
+                _db.products.Load();
+                productsBindingSource.DataSource = _db.products.Local.ToBindingList();
+                _db.Dispose();
             }
 
             //Disable Next button until selection
