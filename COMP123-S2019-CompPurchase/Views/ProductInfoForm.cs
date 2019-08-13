@@ -165,7 +165,8 @@ namespace COMP123_S2019_CompPurchase.Views
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message);
+                    MessageBox.Show("Error " + exception.Message, "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             PopulateProductInfo();
@@ -218,7 +219,8 @@ namespace COMP123_S2019_CompPurchase.Views
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message);
+                    MessageBox.Show("ERROR: " + exception.Message, "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 MessageBox.Show("File saved successfully!", "Saving...",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
